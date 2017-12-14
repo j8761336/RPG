@@ -55,22 +55,7 @@
             <Font size="18.0" />
           </font>
         </Label>
-            <ImageView fitHeight="129.0" fitWidth="160.0" layoutX="45.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@1.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="131.0" fitWidth="127.0" layoutX="461.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@3.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="129.0" fitWidth="137.0" layoutX="258.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@2.png" />
-               </image>
-            </ImageView>
-            <Button layoutX="520.0" layoutY="297.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="96.0" style="-fx-background-color: #90EE90;" text="SHOP" textAlignment="CENTER" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="520.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="297.0">
+            <Button layoutX="520.0" layoutY="297.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="96.0" style="-fx-background-size: cover;" text="SHOP" textAlignment="CENTER" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="520.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="297.0">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
@@ -82,6 +67,13 @@
                      </stops>
                   </LinearGradient>
                </textFill>
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@shop.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
             <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="297.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -98,45 +90,9 @@
                   <Image url="@unlock.png" />
                </image>
             </ImageView>
-            <Button layoutX="62.0" layoutY="230.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="96.0" style="-fx-background-color: lemonchiffon;" text="選擇" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="22.0" />
-               </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="#00c1ff" />
-                        <Stop color="#5800ff" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </textFill>
-            </Button>
-            <Button layoutX="477.0" layoutY="227.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="96.0" style="-fx-background-color: lemonchiffon;" text="選擇" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="22.0" />
-               </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="#00c1ff" />
-                        <Stop color="#5800ff" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </textFill>
-            </Button>
-            <Button layoutX="274.0" layoutY="227.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="96.0" style="-fx-background-color: lemonchiffon;" text="選擇" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="22.0" />
-               </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="#00c1ff" />
-                        <Stop color="#5800ff" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </textFill>
-            </Button>
+            <Button layoutX="72.0" layoutY="123.0" mnemonicParsing="false" prefHeight="114.0" prefWidth="83.0" style="-fx-background-image: url(&quot;1.png&quot;);" text="Button" />
+            <Button layoutX="312.0" layoutY="147.0" mnemonicParsing="false" prefHeight="114.0" prefWidth="83.0" style="-fx-background-image: url(&quot;1.png&quot;);" text="Button" />
+            <Button layoutX="483.0" layoutY="147.0" mnemonicParsing="false" prefHeight="114.0" prefWidth="83.0" style="-fx-background-image: url(&quot;1.png&quot;);" text="Button" />
       </children>
     </AnchorPane>
   </children>
