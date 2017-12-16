@@ -1,0 +1,64 @@
+
+#btnshop{
+    -fx-background-image: url('shop2.png');
+    -fx-background-size: 50px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 90%;
+}
+#mb{
+    -fx-background-color: linear-gradient(#dcbe7e, #9b6e13);
+}
+#mn{
+    /*-fx-background-image: url('bg.jpg');*/
+    -fx-text-fill: #ffffff;
+}
+.men{
+    -fx-text-fill: #ffffff;
+}
+#ap{
+    -fx-background-image: url('bg2.jpg');
+    /*-fx-background-repeat:repeat-x;*/
+    /*-fx-background-size:cover;*/
+}
+#btn1{
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-padding: 10;
+    -fx-border-style: solid;
+    -fx-border-width: 4;
+    -fx-border-radius: 5;
+    -fx-border-color: #a2d8ff;
+    -fx-border-insets: 8;
+}
+#btn2{
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: linear-gradient(#c66e96, #d98489);
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow( three-pass-box , rgba(0, 0, 0, 0.6), 5, 0.0 , 0 , 1 );
+    -fx-padding: 10;
+    -fx-border-style: solid;
+    -fx-border-width: 4;
+    -fx-border-radius: 7;
+    -fx-border-color: #703259;
+}
+#btn3{
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: linear-gradient(#6aa75a, #37905d);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-padding: 10;
+    -fx-border-style: solid;
+    -fx-border-width: 4;
+    -fx-border-radius: 5;
+    -fx-border-color: #054c18;
+}
+.btn:hover{
+
+    -fx-opacity: 0.7;
+}
