@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -20,10 +21,14 @@
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
+<?import java.net.URL?>
 
-<VBox prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
   <children>
-    <MenuBar style="-fx-background-color: lightblue;" VBox.vgrow="NEVER">
+    <MenuBar fx:id="mb" VBox.vgrow="NEVER">
       <menus>
         <Menu mnemonicParsing="false" text="Game">
           <items>
@@ -48,29 +53,25 @@
         </Menu>
       </menus>
     </MenuBar>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: steelblue;" VBox.vgrow="ALWAYS">
+    <AnchorPane fx:id="ap" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-        <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
-          <font>
-            <Font size="18.0" />
-          </font>
-        </Label>
-            <ImageView fitHeight="129.0" fitWidth="160.0" layoutX="45.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+            <Button layoutX="27.0" layoutY="14.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="72.0" text="Button" />
+            <ImageView fitHeight="144.0" fitWidth="96.0" layoutX="83.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@1.png" />
+                  <Image url="@img/person1.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="131.0" fitWidth="127.0" layoutX="461.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="144.0" fitWidth="101.0" layoutX="466.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@3.png" />
+                  <Image url="@img/person2.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="129.0" fitWidth="137.0" layoutX="258.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="144.0" fitWidth="106.0" layoutX="262.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@2.png" />
+                  <Image url="@img/person3.png" />
                </image>
             </ImageView>
-            <Button layoutX="520.0" layoutY="297.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="96.0" style="-fx-background-color: #90EE90;" text="start" textAlignment="CENTER" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="520.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="297.0">
+            <Button layoutX="514.0" layoutY="298.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="96.0" style="-fx-background-color: #90EE90;" text="start" textAlignment="CENTER" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="514.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="298.0">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
@@ -83,22 +84,7 @@
                   </LinearGradient>
                </textFill>
             </Button>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="297.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@lock.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="499.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@lock.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="85.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@unlock.png" />
-               </image>
-            </ImageView>
-            <Button layoutX="62.0" layoutY="230.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="96.0" style="-fx-background-color: lemonchiffon;" text="10$" textAlignment="CENTER">
+            <Button layoutX="83.0" layoutY="212.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="96.0" style="-fx-background-color: lemonchiffon;" text="10$" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
@@ -111,7 +97,7 @@
                   </LinearGradient>
                </textFill>
             </Button>
-            <Button layoutX="477.0" layoutY="227.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="96.0" style="-fx-background-color: lemonchiffon;" text="30$" textAlignment="CENTER">
+            <Button layoutX="472.0" layoutY="212.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="96.0" style="-fx-background-color: lemonchiffon;" text="30$" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
@@ -124,7 +110,7 @@
                   </LinearGradient>
                </textFill>
             </Button>
-            <Button layoutX="274.0" layoutY="227.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="96.0" style="-fx-background-color: lemonchiffon;" text="20$" textAlignment="CENTER">
+            <Button layoutX="277.0" layoutY="212.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="96.0" style="-fx-background-color: lemonchiffon;" text="20$" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>

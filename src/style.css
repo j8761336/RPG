@@ -1,9 +1,16 @@
 
 #btnshop{
-    -fx-background-image: url('shop2.png');
+    -fx-background-image: url('img/shop2.png');
     -fx-background-size: 50px;
     -fx-background-repeat: no-repeat;
     -fx-background-position: 90%;
+}
+#prev{
+-fx-background-image:url('img/prev.jpg');
+-fx-background-size:50px;
+-fx-background-repeat:no-repeat;
+-fx-background-position:90%;
+
 }
 #mb{
     -fx-background-color: linear-gradient(#dcbe7e, #9b6e13);
@@ -16,7 +23,7 @@
     -fx-text-fill: #ffffff;
 }
 #ap{
-    -fx-background-image: url('bg2.jpg');
+    -fx-background-image: url('img/bg2.jpg');
     /*-fx-background-repeat:repeat-x;*/
     /*-fx-background-size:cover;*/
 }

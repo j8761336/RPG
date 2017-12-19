@@ -1,5 +1,3 @@
-package sample;
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -11,12 +9,9 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.ImageView;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 
 public class Controller {
@@ -47,6 +42,13 @@ public class Controller {
     }
     @FXML
     private void btnshopaction(ActionEvent event) throws IOException {
+        Stage stage2=new Stage();
+        Parent root1=FXMLLoader.load(getClass().getResource("2.fxml"));
+        stage2.setScene(new Scene(root1,650,400));
+        stage2.show();
+        ((Node)(event.getSource())).getScene().getWindow().hide();
+    }
+    private void btn1action(ActionEvent event)throws IOException{
         Stage stage2=new Stage();
         Parent root1=FXMLLoader.load(getClass().getResource("2.fxml"));
         stage2.setScene(new Scene(root1,650,400));
