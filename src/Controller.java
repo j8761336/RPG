@@ -11,10 +11,11 @@ import javafx.scene.image.ImageView;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
 import java.io.IOException;
 
-public class Controller {
+public class Controller{
     @FXML
     private MenuBar mb;
     @FXML
@@ -36,10 +37,13 @@ public class Controller {
     @FXML
     private ImageView img3;
 
-    private Main main;
+    Window node;
 
     public Controller() {
     }
+//public Controller() {
+//
+//}
     @FXML
     private void btnshopaction(ActionEvent event) throws IOException {
         Stage stage2=new Stage();
@@ -48,14 +52,18 @@ public class Controller {
         stage2.show();
         ((Node)(event.getSource())).getScene().getWindow().hide();
     }
+    @FXML
     private void btn1action(ActionEvent event)throws IOException{
         Stage stage2=new Stage();
         Parent root1=FXMLLoader.load(getClass().getResource("2.fxml"));
         stage2.setScene(new Scene(root1,650,400));
         stage2.show();
-        ((Node)(event.getSource())).getScene().getWindow().hide();
+        node=((Node)(event.getSource())).getScene().getWindow();
+       ((Node)(event.getSource())).getScene().getWindow().hide();
     }
-    DropShadow shadow=new DropShadow();
+    @FXML
+    private void prevbtn(ActionEvent event)throws IOException{
 
+    }
 
 }

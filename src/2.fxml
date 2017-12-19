@@ -55,7 +55,7 @@
     </MenuBar>
     <AnchorPane fx:id="ap" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <Button fx:id="prev" layoutX="27.0" layoutY="14.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="72.0" text="Button" />
+            <Button fx:id="prev" layoutX="26.0" layoutY="14.0" mnemonicParsing="false" onAction="#prevbtn" prefHeight="49.0" prefWidth="50.0" style="-fx-background-radius: 50;" />
             <ImageView fitHeight="144.0" fitWidth="96.0" layoutX="83.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/person1.png" />
