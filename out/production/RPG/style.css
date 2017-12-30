@@ -13,7 +13,7 @@
 
 }
 #mb{
-    -fx-background-color: linear-gradient(#dcbe7e, #9b6e13);
+    -fx-background-color: linear-gradient(#78b4cb, #6e9dc1);
 }
 #mn{
     /*-fx-background-image: url('bg.jpg');*/
@@ -66,6 +66,8 @@
     -fx-border-color: #054c18;
 }
 .btn:hover{
-
     -fx-opacity: 0.7;
+}
+.btnman{
+-fx-opacity: 0;
 }

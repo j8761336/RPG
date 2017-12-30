@@ -1,5 +1,6 @@
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,9 +14,13 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
+import javax.swing.plaf.synth.SynthTextAreaUI;
 import java.io.IOException;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.ResourceBundle;
 
-public class Controller{
+public class Controller {
     @FXML
     private MenuBar mb;
     @FXML
@@ -29,6 +34,12 @@ public class Controller{
     @FXML
     private Button btn3;
     @FXML
+    private Button btnman1;
+    @FXML
+    private Button btnman2;
+    @FXML
+    private Button btnman3;
+    @FXML
     private Button btnshop;
     @FXML
     private ImageView img1;
@@ -36,34 +47,93 @@ public class Controller{
     private ImageView img2;
     @FXML
     private ImageView img3;
+    @FXML
+    private StageController sc;
+    public int count = 0;
 
-    Window node;
-
-    public Controller() {
+    public void setStageController(StageController s) {
+        sc = s;
     }
-//public Controller() {
-//
-//}
+
     @FXML
     private void btnshopaction(ActionEvent event) throws IOException {
-        Stage stage2=new Stage();
-        Parent root1=FXMLLoader.load(getClass().getResource("2.fxml"));
-        stage2.setScene(new Scene(root1,650,400));
-        stage2.show();
-        ((Node)(event.getSource())).getScene().getWindow().hide();
+        try {
+            sc.setStage(Main.mainview2);
+            sc.cancelStage(Main.mainview);
+        } catch (Exception e) {
+            e.toString();
+        }
     }
-    @FXML
-    private void btn1action(ActionEvent event)throws IOException{
-        Stage stage2=new Stage();
-        Parent root1=FXMLLoader.load(getClass().getResource("2.fxml"));
-        stage2.setScene(new Scene(root1,650,400));
-        stage2.show();
-        node=((Node)(event.getSource())).getScene().getWindow();
-       ((Node)(event.getSource())).getScene().getWindow().hide();
-    }
-    @FXML
-    private void prevbtn(ActionEvent event)throws IOException{
 
+    @FXML
+    private void btn1action(ActionEvent event) throws IOException {
+        try {
+            sc.setStage(Main.mainview2);
+            sc.cancelStage(Main.mainview);
+        } catch (Exception e) {
+            e.toString();
+        }
     }
+
+    @FXML
+    private void btn2action(ActionEvent event) throws IOException {
+        try {
+            sc.setStage(Main.mainview2);
+            sc.cancelStage(Main.mainview);
+        } catch (Exception e) {
+            e.toString();
+        }
+    }
+
+    @FXML
+    private void btn3action(ActionEvent event) throws IOException {
+        try {
+            sc.setStage(Main.mainview2);
+            sc.cancelStage(Main.mainview);
+        } catch (Exception e) {
+            e.toString();
+        }
+    }
+
+    @FXML
+    private void prevbtn(ActionEvent event) throws IOException {
+        try {
+            sc.setStage(Main.mainview);
+            sc.cancelStage(Main.mainview2);
+        } catch (Exception w) {
+            System.out.println(w.toString());
+        }
+    }
+
+    @FXML
+    private void btnman1(ActionEvent event) throws IOException {
+        try {
+            sc.setStage(Main.mainview3);
+            sc.cancelStage(Main.mainview2);
+        } catch (Exception w) {
+            System.out.println(w.toString());
+        }
+    }
+
+    @FXML
+    private void btnman2(ActionEvent event) throws IOException {
+        try {
+            sc.setStage(Main.mainview3);
+            sc.cancelStage(Main.mainview2);
+        } catch (Exception w) {
+            System.out.println(w.toString());
+        }
+    }
+
+    @FXML
+    private void btnman3(ActionEvent event) throws IOException {
+        try {
+            sc.setStage(Main.mainview3);
+            sc.cancelStage(Main.mainview2);
+        } catch (Exception w) {
+            System.out.println(w.toString());
+        }
+    }
+
 
 }

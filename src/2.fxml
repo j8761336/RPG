@@ -56,21 +56,25 @@
     <AnchorPane fx:id="ap" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
             <Button fx:id="prev" layoutX="26.0" layoutY="14.0" mnemonicParsing="false" onAction="#prevbtn" prefHeight="49.0" prefWidth="50.0" style="-fx-background-radius: 50;" />
-            <ImageView fitHeight="144.0" fitWidth="96.0" layoutX="83.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+
+            <ImageView fitHeight="144.0" fitWidth="101.0" layoutX="86.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/person1.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="144.0" fitWidth="101.0" layoutX="466.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@img/person2.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="144.0" fitWidth="106.0" layoutX="262.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+          <Button layoutX="93.0" layoutY="56.0" mnemonicParsing="false" onAction="#btnman1" prefHeight="122.0" prefWidth="77.0" styleClass="btnman" />
+            <ImageView fitHeight="144.0" fitWidth="101.0" layoutX="272.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/person3.png" />
                </image>
             </ImageView>
+            <Button layoutX="277.0" layoutY="56.0" mnemonicParsing="false" onAction="#btnman2" prefHeight="122.0" prefWidth="90.0" styleClass="btnman" />
+            <ImageView fitHeight="144.0" fitWidth="101.0" layoutX="470.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/person2.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="482.0" layoutY="53.0" mnemonicParsing="false" onAction="#btnman3" prefHeight="128.0" prefWidth="77.0" styleClass="btnman" />
             <Button layoutX="514.0" layoutY="298.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="96.0" style="-fx-background-color: #90EE90;" text="start" textAlignment="CENTER" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="514.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="298.0">
                <font>
                   <Font name="System Bold" size="22.0" />
