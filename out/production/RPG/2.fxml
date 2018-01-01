@@ -68,7 +68,7 @@
                   <Image url="@img/person3.png" />
                </image>
             </ImageView>
-            <Button layoutX="277.0" layoutY="56.0" mnemonicParsing="false" onAction="#btnman1" prefHeight="122.0" prefWidth="90.0" styleClass="btnman" />
+            <Button layoutX="277.0" layoutY="56.0" mnemonicParsing="false" onAction="#btnman2" prefHeight="122.0" prefWidth="90.0" styleClass="btnman" />
             <ImageView fitHeight="144.0" fitWidth="101.0" layoutX="470.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/person2.png" />

@@ -8,18 +8,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 
-import javax.swing.plaf.synth.SynthTextAreaUI;
 import java.io.IOException;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.ResourceBundle;
-
 public class Controller {
     @FXML
     private MenuBar mb;
@@ -48,11 +44,23 @@ public class Controller {
     @FXML
     private ImageView img3;
     @FXML
+    private ImageView imgman1;
+    @FXML
+    private ImageView imgman2;
+    @FXML
+    private ImageView imgman3;
+
+    private ImageView img[]=new ImageView[16];
+
     private StageController sc;
     public int count = 0;
 
     public void setStageController(StageController s) {
         sc = s;
+        for(int i=0;i<16;i++){
+            img[i]=new ImageView();
+
+        }
     }
 
     @FXML
@@ -60,6 +68,7 @@ public class Controller {
         try {
             sc.setStage(Main.mainview2);
             sc.cancelStage(Main.mainview);
+
         } catch (Exception e) {
             e.toString();
         }
@@ -110,6 +119,7 @@ public class Controller {
         try {
             sc.setStage(Main.mainview3);
             sc.cancelStage(Main.mainview2);
+            System.out.println(img1.getX());
         } catch (Exception w) {
             System.out.println(w.toString());
         }

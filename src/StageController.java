@@ -10,7 +10,6 @@ import java.util.HashMap;
 
 public class StageController {
     private HashMap<String, Stage> stages = new HashMap<String, Stage>();
-
     public void addStage(String name, Stage stage) {
         stages.put(name, stage);
         System.out.println(name + stage);
@@ -30,9 +29,7 @@ public class StageController {
         Stage tempStage = new Stage();
         tempStage.setScene(new Scene(tempPane));
         this.addStage(name, tempStage);
-
     }
-
     public boolean setStage(String name) {
         this.getStage(name).show();
         return true;
