@@ -90,7 +90,7 @@
                   <Image url="@img/stone.jpeg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="114.0" layoutX="274.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="81.0" fitWidth="114.0" layoutX="266.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/stone.jpeg" />
                </image>
@@ -128,6 +128,21 @@
             <ImageView fitHeight="46.0" fitWidth="66.0" layoutX="108.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/den2.jpeg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgman1" fitHeight="100.0" fitWidth="90.0" layoutX="14.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/person1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgman2" fitHeight="100.0" fitWidth="90.0" layoutX="14.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/person2.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgman3" fitHeight="100.0" fitWidth="90.0" layoutX="14.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/person3.png" />
                </image>
             </ImageView>
          </children>
