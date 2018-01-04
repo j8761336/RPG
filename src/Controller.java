@@ -140,13 +140,13 @@ public class Controller {
             System.out.println(w.toString());
         }
     }
-
-    @FXML
+ @FXML
     private void btnman1(ActionEvent event) throws IOException {
         try {
-            sc.setStage(Main.mainview3);
+            judge(1);
             sc.cancelStage(Main.mainview2);
-            System.out.println(img1.getX());
+            sc.setStage(Main.mainview3);
+
         } catch (Exception w) {
             System.out.println(w.toString());
         }
@@ -155,8 +155,9 @@ public class Controller {
     @FXML
     private void btnman2(ActionEvent event) throws IOException {
         try {
-            sc.setStage(Main.mainview3);
+            judge(2);
             sc.cancelStage(Main.mainview2);
+            sc.setStage(Main.mainview3);
         } catch (Exception w) {
             System.out.println(w.toString());
         }
@@ -165,12 +166,32 @@ public class Controller {
     @FXML
     private void btnman3(ActionEvent event) throws IOException {
         try {
-            sc.setStage(Main.mainview3);
+            judge(3);
             sc.cancelStage(Main.mainview2);
+            sc.setStage(Main.mainview3);
         } catch (Exception w) {
             System.out.println(w.toString());
         }
     }
 
+ private void judge(int a){
+        Image img = null;
+        if(a==1){img=new Image("img/person1.png");}
+        else if(a==3){
+            img=new Image("img/person2.png");
+        }else if(a==2){
+            img=new Image("img/person3.png");
+        }
+        ImageView imgv=new ImageView(img);
+        Pane pane=(Pane)sc.getStage(Main.mainview3).getScene().getRoot();
+//        VBox v= (VBox) pane.getChildren().get();
+//        AnchorPane an= (AnchorPane) pane.getChildren();
+//        System.out.println(pane.getChildren());
+        pane.getChildren().add(imgv);
+        imgv.setFitHeight(100);
+        imgv.setFitWidth(90);
+        imgv.setX(10);
+        imgv.setY(85);
+    }
 
 }
