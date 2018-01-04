@@ -1,3 +1,4 @@
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -11,6 +12,8 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.event.ActionEvent;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -62,6 +65,30 @@ public class Controller {
 
         }
     }
+//    @FXML
+//    public void setKeyPressed(){
+//        imgman1.setOnKeyPressed(new EventHandler<KeyEvent>() {
+//            @Override
+//            public void handle(KeyEvent event) {
+//                int dx = 0;
+//                int dy = 0;
+//
+//            if(event.getCode()== KeyCode.UP){
+//                dy = -5;
+//            }else if(event.getCode()== KeyCode.DOWN){
+//                dy = 5;
+//            }else if(event.getCode()== KeyCode.LEFT){
+//                dx = -5;
+//            }else if(event.getCode()== KeyCode.RIGHT){
+//                dx = 5;
+//            }
+//                imgman1.setLayoutX(imgman1.getLayoutX()+dx);
+//                imgman1.setLayoutY(imgman1.getLayoutY()+dy);
+//
+//
+//            }
+//        });
+//    }
 
     @FXML
     private void btnshopaction(ActionEvent event) throws IOException {

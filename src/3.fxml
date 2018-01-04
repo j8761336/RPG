@@ -121,19 +121,9 @@
                   <Image url="@img/den2.jpeg" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgman1" fitHeight="100.0" fitWidth="90.0" layoutX="14.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgman1" fitHeight="100.0" fitWidth="90.0" layoutX="0.0" layoutY="30.0" onKeyPressed="#setKeyPressed" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/person1.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="imgman2" fitHeight="100.0" fitWidth="90.0" layoutX="14.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@img/person2.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="imgman3" fitHeight="100.0" fitWidth="90.0" layoutX="14.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@img/person3.png" />
                </image>
             </ImageView>
          </children>
