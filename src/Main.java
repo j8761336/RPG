@@ -16,8 +16,10 @@ public class Main extends Application {
     public static String mainview2 = "MainView2";
     public static String main2 = "2.fxml";
 
-    public static String mainview3="MainView3";
-    public static String main3="3.fxml";
+    public static String mainview3 = "MainView3";
+    public static String main3 = "3.fxml";
+
+    public static  String controller1="controller";
 
     private StageController stageController;
     private Controller cr;
@@ -28,13 +30,15 @@ public class Main extends Application {
 //        this.primaryStage=primaryStage;
 //        this.primaryStage.setTitle("請選擇關卡");
 //        first();
-        stageController=new StageController();
-        stageController.loadStage(mainview,main1);
-        stageController.loadStage(mainview2,main2);
-        stageController.loadStage(mainview3,main3);
+        stageController = new StageController();
+        stageController.loadStage(mainview, main1);
+        stageController.loadStage(mainview2, main2);
+        stageController.loadStage(mainview3, main3);
         stageController.setStage(mainview);
 
     }
+
+
 
     public void first() throws IOException {
 //        Parent root = FXMLLoader.load(getClass().getResource("1.fxml"));

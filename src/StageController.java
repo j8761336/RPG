@@ -7,13 +7,21 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Map;
 
 public class StageController {
     private HashMap<String, Stage> stages = new HashMap<String, Stage>();
+    public Map<String, Object> controller = new HashMap<String, Object>();
+
     public void addStage(String name, Stage stage) {
         stages.put(name, stage);
-        System.out.println(name + stage);
+//        System.out.println(name + stage);
 
+    }
+
+    public void addcontroller(String name, Object obj) {
+        controller.put(name, obj);
+        System.out.println(name + obj);
     }
 
     public Stage getStage(String name) {
@@ -21,15 +29,21 @@ public class StageController {
 
     }
 
+    public Object getController(String name) {
+        return controller.get(name);
+    }
+
     public void loadStage(String name, String resources) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(resources));
         Pane tempPane = (Pane) loader.load();
-        Controller cr = loader.getController();
-        cr.setStageController(this);
+//        Controller cr = loader.getController();
+        Controllerstage cs = loader.getController();
+        cs.setStageController(this);
         Stage tempStage = new Stage();
         tempStage.setScene(new Scene(tempPane));
         this.addStage(name, tempStage);
     }
+
     public boolean setStage(String name) {
         this.getStage(name).show();
         return true;

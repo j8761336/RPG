@@ -1,3 +1,4 @@
+import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,13 +20,16 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-public class Controller {
+
+public class Controller implements Controllerstage {
     @FXML
     private MenuBar mb;
     @FXML
     private Menu mn;
     @FXML
     private AnchorPane ap;
+    @FXML
+    private AnchorPane ap2;
     @FXML
     private Button btn1;
     @FXML
@@ -52,44 +56,23 @@ public class Controller {
     private ImageView imgman2;
     @FXML
     private ImageView imgman3;
-
-    private ImageView img[]=new ImageView[16];
+    @FXML
+    private ImageView img[] = new ImageView[16];
 
     private StageController sc;
-    public int count = 0;
+    public static int count = 0;
+    public int b = 0;
 
     public void setStageController(StageController s) {
         sc = s;
-        for(int i=0;i<16;i++){
-            img[i]=new ImageView();
 
+        if (count == 0) {
+            sc.addcontroller("Controller1", this);
+            count++;
+        } else {
+            sc.addcontroller("Controller2", this);
         }
     }
-//    @FXML
-//    public void setKeyPressed(){
-//        imgman1.setOnKeyPressed(new EventHandler<KeyEvent>() {
-//            @Override
-//            public void handle(KeyEvent event) {
-//                int dx = 0;
-//                int dy = 0;
-//
-//            if(event.getCode()== KeyCode.UP){
-//                dy = -5;
-//            }else if(event.getCode()== KeyCode.DOWN){
-//                dy = 5;
-//            }else if(event.getCode()== KeyCode.LEFT){
-//                dx = -5;
-//            }else if(event.getCode()== KeyCode.RIGHT){
-//                dx = 5;
-//            }
-//                imgman1.setLayoutX(imgman1.getLayoutX()+dx);
-//                imgman1.setLayoutY(imgman1.getLayoutY()+dy);
-//
-//
-//            }
-//        });
-//    }
-
     @FXML
     private void btnshopaction(ActionEvent event) throws IOException {
         try {
@@ -140,13 +123,14 @@ public class Controller {
             System.out.println(w.toString());
         }
     }
- @FXML
+
+    @FXML
     private void btnman1(ActionEvent event) throws IOException {
         try {
-            judge(1);
+            mapController con = (mapController) sc.getController("Controller3");
+            con.init(1);
             sc.cancelStage(Main.mainview2);
             sc.setStage(Main.mainview3);
-
         } catch (Exception w) {
             System.out.println(w.toString());
         }
@@ -155,7 +139,8 @@ public class Controller {
     @FXML
     private void btnman2(ActionEvent event) throws IOException {
         try {
-            judge(2);
+            mapController con = (mapController) sc.getController("Controller3");
+            con.init(2);
             sc.cancelStage(Main.mainview2);
             sc.setStage(Main.mainview3);
         } catch (Exception w) {
@@ -166,7 +151,8 @@ public class Controller {
     @FXML
     private void btnman3(ActionEvent event) throws IOException {
         try {
-            judge(3);
+            mapController con = (mapController) sc.getController("Controller3");
+            con.init(3);
             sc.cancelStage(Main.mainview2);
             sc.setStage(Main.mainview3);
         } catch (Exception w) {
@@ -174,24 +160,6 @@ public class Controller {
         }
     }
 
- private void judge(int a){
-        Image img = null;
-        if(a==1){img=new Image("img/person1.png");}
-        else if(a==3){
-            img=new Image("img/person2.png");
-        }else if(a==2){
-            img=new Image("img/person3.png");
-        }
-        ImageView imgv=new ImageView(img);
-        Pane pane=(Pane)sc.getStage(Main.mainview3).getScene().getRoot();
-//        VBox v= (VBox) pane.getChildren().get();
-//        AnchorPane an= (AnchorPane) pane.getChildren();
-//        System.out.println(pane.getChildren());
-        pane.getChildren().add(imgv);
-        imgv.setFitHeight(100);
-        imgv.setFitWidth(90);
-        imgv.setX(10);
-        imgv.setY(85);
-    }
+
 
 }

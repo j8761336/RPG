@@ -8,26 +8,17 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<VBox fx:id="vb" prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<VBox prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mapController">
     <stylesheets>
         <URL value="@style.css" />
     </stylesheets>
     <children>
-    <MenuBar fx:id="mb" VBox.vgrow="NEVER">
+    <MenuBar VBox.vgrow="NEVER">
       <menus>
         <Menu mnemonicParsing="false" text="Game">
           <items>
             <MenuItem mnemonicParsing="false" text="New" />
-            <MenuItem mnemonicParsing="false" text="Open…" />
-            <Menu mnemonicParsing="false" text="Open Recent" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Close" />
-            <MenuItem mnemonicParsing="false" text="Save" />
-            <MenuItem mnemonicParsing="false" text="Save As…" />
-            <MenuItem mnemonicParsing="false" text="Revert" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Preferences…" />
-            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Reset" />
             <MenuItem mnemonicParsing="false" text="Quit" />
           </items>
         </Menu>
@@ -38,7 +29,7 @@
         </Menu>
       </menus>
     </MenuBar>
-      <AnchorPane maxHeight="-1.0" maxWidth="-1.0">
+      <AnchorPane fx:id="anchorPane" maxHeight="-1.0" maxWidth="-1.0">
          <children>
             <ImageView fitHeight="389.0" fitWidth="657.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -55,7 +46,27 @@
                   <Image url="@img/stone.jpeg" />
                </image>
             </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="114.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/stone.jpeg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="114.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/stone.jpeg" />
+               </image>
+            </ImageView>
             <ImageView fitHeight="81.0" fitWidth="114.0" layoutX="165.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/stone.jpeg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="114.0" layoutX="266.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/stone.jpeg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="114.0" layoutX="439.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/stone.jpeg" />
                </image>
@@ -75,32 +86,7 @@
                   <Image url="@img/stone.jpeg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="114.0" layoutX="548.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@img/stone.jpeg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="114.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@img/stone.jpeg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="114.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@img/stone.jpeg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="114.0" layoutX="266.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@img/stone.jpeg" />
-               </image>
-            </ImageView>
             <ImageView fitHeight="81.0" fitWidth="231.0" layoutX="229.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@img/stone.jpeg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="114.0" layoutX="439.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/stone.jpeg" />
                </image>
@@ -115,12 +101,17 @@
                   <Image url="@img/stone.jpeg" />
                </image>
             </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="114.0" layoutX="385.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/stone.jpeg" />
+               </image>
+            </ImageView>
             <ImageView fitHeight="81.0" fitWidth="114.0" layoutX="385.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/stone.jpeg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="114.0" layoutX="385.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="81.0" fitWidth="114.0" layoutX="548.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/stone.jpeg" />
                </image>
@@ -128,21 +119,6 @@
             <ImageView fitHeight="46.0" fitWidth="66.0" layoutX="108.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/den2.jpeg" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="imgman1" fitHeight="100.0" fitWidth="90.0" layoutX="14.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@img/person1.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="imgman2" fitHeight="100.0" fitWidth="90.0" layoutX="14.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@img/person2.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="imgman3" fitHeight="100.0" fitWidth="90.0" layoutX="14.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@img/person3.png" />
                </image>
             </ImageView>
          </children>
