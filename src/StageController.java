@@ -21,7 +21,7 @@ public class StageController {
 
     public void addcontroller(String name, Object obj) {
         controller.put(name, obj);
-        System.out.println(name + obj);
+//        System.out.println(name + obj);
     }
 
     public Stage getStage(String name) {
