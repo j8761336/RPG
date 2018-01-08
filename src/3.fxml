@@ -41,82 +41,82 @@
                   <Image url="@img/den2.jpeg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="114.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="80.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/stone.jpeg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="114.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="80.0" fitWidth="100.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/stone.jpeg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="114.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="80.0" fitWidth="100.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/stone.jpeg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="114.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="80.0" fitWidth="100.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/stone.jpeg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="114.0" layoutX="165.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="80.0" fitWidth="100.0" layoutX="166.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/stone.jpeg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="114.0" layoutX="266.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="80.0" fitWidth="100.0" layoutX="266.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/stone.jpeg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="114.0" layoutX="439.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="80.0" fitWidth="100.0" layoutX="457.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/stone.jpeg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="114.0" layoutX="548.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="80.0" fitWidth="100.0" layoutX="557.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/stone.jpeg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="114.0" layoutX="175.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="80.0" fitWidth="100.0" layoutX="175.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/stone.jpeg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="231.0" layoutX="175.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="80.0" fitWidth="100.0" layoutX="175.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/stone.jpeg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="231.0" layoutX="229.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="80.0" fitWidth="100.0" layoutX="229.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/stone.jpeg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="114.0" layoutX="369.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="80.0" fitWidth="100.0" layoutX="358.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/stone.jpeg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="114.0" layoutX="477.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="80.0" fitWidth="100.0" layoutX="457.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/stone.jpeg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="114.0" layoutX="385.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="80.0" fitWidth="100.0" layoutX="385.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/stone.jpeg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="114.0" layoutX="385.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="80.0" fitWidth="100.0" layoutX="385.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/stone.jpeg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="114.0" layoutX="548.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="80.0" fitWidth="100.0" layoutX="557.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/stone.jpeg" />
                </image>
