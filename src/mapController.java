@@ -36,7 +36,7 @@ public class mapController implements Controllerstage {
         imgv.setFitHeight(70);
         imgv.setFitWidth(50);
         imgv.setLayoutX(0);
-        imgv.setLayoutY(40);
+        imgv.setLayoutY(85);
 //        System.out.println(imgv.getX());
 //        System.out.println(imgv.getY());
         stonecount();
@@ -101,19 +101,23 @@ public class mapController implements Controllerstage {
             int c = (int) stone[i].getLayoutY();
             int d = c + (int) stone[i].getFitHeight();
             if (e == 1) {
-                if (dx >= a-35 && dx <= b - 10 && dy >= c && dy - 5 <= d -65) {
+                if (dx >= a-45 && dx <= b && dy > c && dy - 5 < d-5) {
                     count = 0;
+                    System.out.println("Tdy" + dy);
+                    System.out.println("T" + c);
+                    System.out.println("T" + d);
                     break;
                 } else if (dy - 5 < 0) {
                     break;
                 } else {
 //                    System.out.println("Tdx" + dx);
-//                    System.out.println("Tdy" + dy);
+
+
                     count = 1;
                 }
             } else if (e == 2) {
-                if (dx >= a-35 && dx <= b - 10 && dy + 5 >= c - 70 && dy <= d - 70) {
-                    if (dy >= 0 && dy <= 31) {
+                if (dx >= a-45 && dx <= b && dy + 5 > c-70 && dy < d-5) {
+                    if (dy >= 0 && dy <= 81) {
                         System.out.println("dy" + dy);
 //                        System.out.println("break" + c);
 //                        System.out.println("break" + d);
@@ -127,14 +131,14 @@ public class mapController implements Controllerstage {
                         count = 0;
                         break;
                     }
-                } else if (dy + 5 > 315) {
+                } else if (dy + 5 >420) {
                     break;
                 } else {
 //                    System.out.println("Ddx" + dx);
                     count = 1;
                 }
             } else if (e == 3) {
-                if (dx >= a && dx - 5 <= b && dy >= c - 60 && dy < d - 70) {
+                if (dx > a && dx - 5 <= b&& dy >= c-70 && dy <= d-10) {
 //                    if(dy<=d+60){
 //                        System.out.println("dy" + dy);
 //                    }
@@ -144,7 +148,7 @@ public class mapController implements Controllerstage {
 //                    System.out.println("dy" + dy);
                     count = 0;
                     break;
-                } else if (dx-5 < 0) {
+                } else if (dx - 5 < 0) {
                     break;
                 } else {
 //                    System.out.println("Ldyy" + i);
@@ -155,7 +159,7 @@ public class mapController implements Controllerstage {
                     count = 1;
                 }
             } else if (e == 4) {
-                if (dx + 5 >= a - 50 && dx <= b-10 && dy >= c - 60 && dy <= d - 70) {
+                if (dx + 5 > a-50 && dx < b && dy >= c-70 && dy <= d-10) {
 //                    if (dy >= 0 && dy <= 81) {
 //                        count = 1;
 //                    } else {
@@ -168,7 +172,7 @@ public class mapController implements Controllerstage {
                     count = 0;
                     break;
 //                    }
-                } else if (dx + 5 >= 607) {
+                } else if (dx + 5 >=800) {
                     break;
                 } else {
 //                    System.out.println("Rdx" + dx);
@@ -195,3 +199,83 @@ public class mapController implements Controllerstage {
 
 
 }
+
+
+//            if (e == 1) {
+//                    if (dx >= a-35 && dx <= b - 10 && dy >= c && dy - 5 <= d -65) {
+//                    count = 0;
+//                    break;
+//                    } else if (dy - 5 < 0) {
+//        break;
+//        } else {
+////                    System.out.println("Tdx" + dx);
+////                    System.out.println("Tdy" + dy);
+//        count = 1;
+//        }
+//        } else if (e == 2) {
+//        if (dx >= a-35 && dx <= b - 10 && dy + 5 >= c - 70 && dy <= d - 70) {
+//        if (dy >= 0 && dy <= 31) {
+//        System.out.println("dy" + dy);
+////                        System.out.println("break" + c);
+////                        System.out.println("break" + d);
+////                        System.out.println("break" + i);
+//        count = 1;
+//        } else {
+//        System.out.println("break" + i);
+//        System.out.println("dy" + dy);
+//        System.out.println("break" + c);
+//        System.out.println("break" + d);
+//        count = 0;
+//        break;
+//        }
+//        } else if (dy + 5 > 315) {
+//        break;
+//        } else {
+////                    System.out.println("Ddx" + dx);
+//        count = 1;
+//        }
+//        } else if (e == 3) {
+//        if (dx >= a && dx - 5 <= b && dy >= c - 60 && dy < d - 70) {
+////                    if(dy<=d+60){
+////                        System.out.println("dy" + dy);
+////                    }
+////                    System.out.println("break" + i);
+////                    System.out.println("break" + (c - 60));
+////                    System.out.println("break" + (d - 60));
+////                    System.out.println("dy" + dy);
+//        count = 0;
+//        break;
+//        } else if (dx-5 < 0) {
+//        break;
+//        } else {
+////                    System.out.println("Ldyy" + i);
+////                    System.out.println("Ldy" + dy);
+////                    System.out.println("Ldx" + dx);
+////                    System.out.println("Ldyy" + c);
+////                    System.out.println("Ldyy" + (c-35));
+//        count = 1;
+//        }
+//        } else if (e == 4) {
+//        if (dx + 5 >= a - 50 && dx <= b-10 && dy >= c - 60 && dy <= d - 70) {
+////                    if (dy >= 0 && dy <= 81) {
+////                        count = 1;
+////                    } else {
+//        System.out.println("Ldyy" + i);
+//        System.out.println("dy" + dy);
+//        System.out.println("dx" + dx);
+//        System.out.println("Rdy" + c);
+//        System.out.println("Rdy" + d);
+//        System.out.println("break");
+//        count = 0;
+//        break;
+////                    }
+//        } else if (dx + 5 >= 607) {
+//        break;
+//        } else {
+////                    System.out.println("Rdx" + dx);
+//        count = 1;
+//        }
+//        } else {
+//        count++;
+//        }
+//        }
