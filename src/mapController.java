@@ -41,6 +41,8 @@ public class mapController implements Controllerstage {
 //        System.out.println(imgv.getY());
         stonecount();
         this.addKeyHandler();
+         Text t =new Text();
+        t.start();
     }
 
     private void addKeyHandler() {
@@ -198,84 +200,32 @@ public class mapController implements Controllerstage {
     }
 
 
+}public class Text extends Thread {
+        ImageView a = (ImageView) anchorPane.getChildren().get(1);
+        public void run() {
+            while(true){
+                try {
+                    a.setVisible(false);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        Thread.sleep(1 * 500);
+                    } catch (Exception e) {
+                    }
+                }try {
+                    a.setVisible(true);
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }finally {
+                    try {
+                        Thread.sleep(1 * 500);
+                    } catch (Exception e) {
+                  }}
+
+        }
+        }
+    }
+
 }
 
-
-//            if (e == 1) {
-//                    if (dx >= a-35 && dx <= b - 10 && dy >= c && dy - 5 <= d -65) {
-//                    count = 0;
-//                    break;
-//                    } else if (dy - 5 < 0) {
-//        break;
-//        } else {
-////                    System.out.println("Tdx" + dx);
-////                    System.out.println("Tdy" + dy);
-//        count = 1;
-//        }
-//        } else if (e == 2) {
-//        if (dx >= a-35 && dx <= b - 10 && dy + 5 >= c - 70 && dy <= d - 70) {
-//        if (dy >= 0 && dy <= 31) {
-//        System.out.println("dy" + dy);
-////                        System.out.println("break" + c);
-////                        System.out.println("break" + d);
-////                        System.out.println("break" + i);
-//        count = 1;
-//        } else {
-//        System.out.println("break" + i);
-//        System.out.println("dy" + dy);
-//        System.out.println("break" + c);
-//        System.out.println("break" + d);
-//        count = 0;
-//        break;
-//        }
-//        } else if (dy + 5 > 315) {
-//        break;
-//        } else {
-////                    System.out.println("Ddx" + dx);
-//        count = 1;
-//        }
-//        } else if (e == 3) {
-//        if (dx >= a && dx - 5 <= b && dy >= c - 60 && dy < d - 70) {
-////                    if(dy<=d+60){
-////                        System.out.println("dy" + dy);
-////                    }
-////                    System.out.println("break" + i);
-////                    System.out.println("break" + (c - 60));
-////                    System.out.println("break" + (d - 60));
-////                    System.out.println("dy" + dy);
-//        count = 0;
-//        break;
-//        } else if (dx-5 < 0) {
-//        break;
-//        } else {
-////                    System.out.println("Ldyy" + i);
-////                    System.out.println("Ldy" + dy);
-////                    System.out.println("Ldx" + dx);
-////                    System.out.println("Ldyy" + c);
-////                    System.out.println("Ldyy" + (c-35));
-//        count = 1;
-//        }
-//        } else if (e == 4) {
-//        if (dx + 5 >= a - 50 && dx <= b-10 && dy >= c - 60 && dy <= d - 70) {
-////                    if (dy >= 0 && dy <= 81) {
-////                        count = 1;
-////                    } else {
-//        System.out.println("Ldyy" + i);
-//        System.out.println("dy" + dy);
-//        System.out.println("dx" + dx);
-//        System.out.println("Rdy" + c);
-//        System.out.println("Rdy" + d);
-//        System.out.println("break");
-//        count = 0;
-//        break;
-////                    }
-//        } else if (dx + 5 >= 607) {
-//        break;
-//        } else {
-////                    System.out.println("Rdx" + dx);
-//        count = 1;
-//        }
-//        } else {
-//        count++;
-//        }
-//        }
