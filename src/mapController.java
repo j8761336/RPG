@@ -134,7 +134,7 @@ public class mapController implements Controllerstage {
                     count = 1;
                 }
             } else if (e == 3) {
-                if (dx >= a && dx - 5 <= b && dy >= c - 70 && dy < d - 70) {
+                if (dx >= a && dx - 5 <= b && dy >= c - 60 && dy < d - 70) {
 //                    if(dy<=d+60){
 //                        System.out.println("dy" + dy);
 //                    }
