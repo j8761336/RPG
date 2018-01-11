@@ -41,8 +41,8 @@ public class mapController implements Controllerstage {
 //        System.out.println(imgv.getY());
         stonecount();
         this.addKeyHandler();
-//         Text t =new Text();
-//        t.start();
+         Text t =new Text();
+        t.start();
     }
 
     private void addKeyHandler() {
@@ -156,36 +156,36 @@ public class mapController implements Controllerstage {
         sc = stageController;
         sc.addcontroller("Controller3", this);
     }
+    public class Text extends Thread {
+
+        ImageView a = (ImageView) anchorPane.getChildren().get(1);
+        public void run() {
+            while(true){
+                try {
+                    a.setVisible(false);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        Thread.sleep(1 * 500);
+                    } catch (Exception e) {
+                    }
+                }try {
+                    a.setVisible(true);
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }finally {
+                    try {
+                        Thread.sleep(1 * 500);
+                    } catch (Exception e) {
+                    }}
+
+            }
+        }
+
+
+    }
+
 
 
 }
-//public class Text extends Thread {
-//
-//    ImageView a = (ImageView) anchorPane.getChildren().get(1);
-//        public void run() {
-//            while(true){
-//                try {
-//                    a.setVisible(false);
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                } finally {
-//                    try {
-//                        Thread.sleep(1 * 500);
-//                    } catch (Exception e) {
-//                    }
-//                }try {
-//                    a.setVisible(true);
-//                }catch (Exception e) {
-//                    e.printStackTrace();
-//                }finally {
-//                    try {
-//                        Thread.sleep(1 * 500);
-//                    } catch (Exception e) {
-//                  }}
-//
-//        }
-//        }
-//
-//
-//}
-
