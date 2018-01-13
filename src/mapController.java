@@ -87,8 +87,8 @@ public class mapController implements Controllerstage {
         stonecount();
         this.addKeyHandler();
         Text t = new Text();
-        Text2 t2 =new Text2();
-        Text3 t3 =new Text3();
+        Text2 t2 = new Text2();
+        Text3 t3 = new Text3();
         t3.start();
         t2.start();
         t.start();
@@ -136,7 +136,78 @@ public class mapController implements Controllerstage {
                 }
                 imgv.setLayoutX(dx);
                 imgv.setLayoutY(dy);
+                Pane pane = (Pane) sc.getStage(Main.mainview3).getScene().getRoot();
+                AnchorPane an = (AnchorPane) pane.getChildren().get(1);
+                ImageView a1 = (ImageView) an.getChildren().get(21);
+                ImageView a2 = (ImageView) an.getChildren().get(21);
+                ImageView a3 = (ImageView) an.getChildren().get(21);
+                ImageView a4 = (ImageView) an.getChildren().get(21);
+                ImageView a5 = (ImageView) an.getChildren().get(21);
+                ImageView a6 = (ImageView) an.getChildren().get(21);
+                ImageView a7 = (ImageView) an.getChildren().get(21);
+                if (dx == 110 && dy == 60) {
+                    a1.setVisible(false);
+                } else if (dx == 160 && dy == 60) {
+                    a1.setVisible(false);
+                }
+//a2
+                if (dx == 109 && dy == 419) {
+                    a2.setVisible(false);
+                } else if (dx == 159 && dy == 419) {
+                    a2.setVisible(false);
+                } else if (dx == 109 && dy == 469) {
+                    a2.setVisible(false);
+                } else if (dx == 159 && dy == 469) {
+                    a2.setVisible(false);
+                }
+//a3
+                if (dx == 761 && dy == 63) {
+                    a3.setVisible(false);
+                } else if (dx == 811 && dy == 63) {
+                    a3.setVisible(false);
+                }
+//a4
+                if (dx == 320 && dy == 256) {
+                    a4.setVisible(false);
+                } else if (dx == 320 && dy == 306) {
+                    a4.setVisible(false);
+                } else if (dx == 370 && dy == 256) {
+                    a4.setVisible(false);
+                } else if (dx == 370 && dy == 306) {
+                    a4.setVisible(false);
+                }
+//a5
+                if (dx == 441 && dy == 13) {
+                    a5.setVisible(false);
+                } else if (dx == 441 && dy == 63) {
+                    a5.setVisible(false);
+                } else if (dx == 491 && dy == 13) {
+                    a5.setVisible(false);
+                } else if (dx == 491 && dy == 63) {
+                    a5.setVisible(false);
+                }
+//a6
+                if (dx == 664 && dy == 283) {
+                    a6.setVisible(false);
+                } else if (dx == 664 && dy == 333) {
+                    a6.setVisible(false);
+                } else if (dx == 714 && dy == 283) {
+                    a6.setVisible(false);
+                } else if (dx == 714 && dy == 333) {
+                    a6.setVisible(false);
+                }
+//a7
+                if (dx == 450 && dy == 333) {
+                    a7.setVisible(false);
+                } else if (dx == 500 && dy == 333) {
+                    a7.setVisible(false);
+                } else if (dx == 450 && dy == 383) {
+                    a7.setVisible(false);
+                } else if (dx == 500 && dy == 383) {
+                    a7.setVisible(false);
+                }
             }
+
         });
     }
 
@@ -216,6 +287,7 @@ public class mapController implements Controllerstage {
         }
     }
 
+
     public void stonecount() {
         Pane pane = (Pane) sc.getStage(Main.mainview3).getScene().getRoot();
         AnchorPane an = (AnchorPane) pane.getChildren().get(1);
@@ -234,7 +306,7 @@ public class mapController implements Controllerstage {
     public class Text extends Thread {
         ImageView a = (ImageView) anchorPane.getChildren().get(1);
         ImageView b = (ImageView) anchorPane.getChildren().get(18);
-//        ImageView c = (ImageView) anchorPane.getChildren().get(19);
+        //        ImageView c = (ImageView) anchorPane.getChildren().get(19);
 //        ImageView d = (ImageView) anchorPane.getChildren().get(20);
         double bx = b.getLayoutX();
         double by = b.getLayoutY();
@@ -251,7 +323,7 @@ public class mapController implements Controllerstage {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                }
+            }
 
         }
 
@@ -411,6 +483,7 @@ public class mapController implements Controllerstage {
             }
         }
     }
+
     //  小怪物第二之-------------------------------------------------------------------------
     public class Text2 extends Thread {
         ImageView c = (ImageView) anchorPane.getChildren().get(19);
@@ -436,7 +509,9 @@ public class mapController implements Controllerstage {
                     }
                 }
             }
-        }public void crun2() {
+        }
+
+        public void crun2() {
             while (true) {
                 try {
                     if (cy < 246) {
@@ -455,7 +530,9 @@ public class mapController implements Controllerstage {
                     }
                 }
             }
-        }public void crun3() {
+        }
+
+        public void crun3() {
             while (true) {
                 try {
                     if (cx > 400) {
@@ -474,7 +551,9 @@ public class mapController implements Controllerstage {
                     }
                 }
             }
-        }public void crun4() {
+        }
+
+        public void crun4() {
             while (true) {
                 try {
                     if (cy >= 121) {
@@ -495,8 +574,9 @@ public class mapController implements Controllerstage {
             }
         }
 
- }
-//   小怪物第3之-------------------------------------------------------------------------
+    }
+
+    //   小怪物第3之-------------------------------------------------------------------------
     public class Text3 extends Thread {
 
         ImageView d = (ImageView) anchorPane.getChildren().get(20);
@@ -572,9 +652,9 @@ public class mapController implements Controllerstage {
                     if (dy > 280) {
                         dy -= 10;
                         d.setLayoutY(dy);
-                    }else {
+                    } else {
                         run();
-                    break;
+                        break;
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
