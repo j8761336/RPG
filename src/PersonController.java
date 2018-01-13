@@ -125,6 +125,7 @@ public class PersonController implements Controllerstage {
     @FXML
     private void start(ActionEvent event) throws IOException {
         try {
+
             mapController map = (mapController) sc.getController("Controller3");
             if (person == 1) {
                 map.init(1);
