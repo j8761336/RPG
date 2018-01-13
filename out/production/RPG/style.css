@@ -40,7 +40,19 @@
     -fx-border-color: #a2d8ff;
     -fx-border-insets: 8;
 }
-#btn2{
+.nobtn{
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 20;
+    -fx-background-color: linear-gradient(#484848, #848484);
+    -fx-effect: dropshadow( three-pass-box , rgba(0, 0, 0, 0.6), 5, 0.0 , 0 , 1 );
+    -fx-border-style: solid;
+    -fx-border-width: 4;
+    -fx-border-radius: 7;
+    -fx-border-color: #000000;
+}
+#btn2style{
     -fx-font-size: 24px;
     -fx-font-weight: bold;
     -fx-text-fill: #ffffff;
@@ -53,7 +65,7 @@
     -fx-border-radius: 7;
     -fx-border-color: #703259;
 }
-#btn3{
+#btn3style{
     -fx-font-size: 24px;
     -fx-font-weight: bold;
     -fx-text-fill: #ffffff;

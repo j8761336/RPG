@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.input.*?>
 <?import java.net.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
@@ -23,7 +24,7 @@
 <?import javafx.scene.text.Font?>
 <?import java.net.URL?>
 
-<VBox prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<VBox prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PersonController">
     <stylesheets>
         <URL value="@style.css" />
     </stylesheets>
@@ -32,50 +33,43 @@
       <menus>
         <Menu mnemonicParsing="false" text="Game">
           <items>
-            <MenuItem mnemonicParsing="false" text="New" />
-            <MenuItem mnemonicParsing="false" text="Open…" />
-            <Menu mnemonicParsing="false" text="Open Recent" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Close" />
-            <MenuItem mnemonicParsing="false" text="Save" />
-            <MenuItem mnemonicParsing="false" text="Save As…" />
-            <MenuItem mnemonicParsing="false" text="Revert" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Preferences…" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Quit" />
+            <MenuItem mnemonicParsing="false" onAction="#reset" text="New" />
+            <MenuItem mnemonicParsing="false" onAction="#exit" text="Quit">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Help">
           <items>
-            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+            <MenuItem mnemonicParsing="false" onAction="#about" text="About MyHelloApp" />
           </items>
         </Menu>
       </menus>
     </MenuBar>
     <AnchorPane fx:id="ap" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <Button fx:id="prev" layoutX="26.0" layoutY="14.0" mnemonicParsing="false" onAction="#prevbtn" prefHeight="49.0" prefWidth="50.0" style="-fx-background-radius: 50;" />
+            <Button fx:id="prev" layoutX="34.0" layoutY="15.0" mnemonicParsing="false" onAction="#prevbtn" prefHeight="49.0" prefWidth="50.0" style="-fx-background-radius: 50;" />
 
-            <ImageView fitHeight="144.0" fitWidth="101.0" layoutX="86.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="144.0" fitWidth="101.0" layoutX="89.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/person1.png" />
                </image>
             </ImageView>
-          <Button layoutX="93.0" layoutY="56.0" mnemonicParsing="false" onAction="#btnman1" prefHeight="122.0" prefWidth="77.0" styleClass="btnman" />
-            <ImageView fitHeight="144.0" fitWidth="101.0" layoutX="272.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+          <Button fx:id="btnman1" layoutX="84.0" layoutY="85.0" mnemonicParsing="false" onAction="#btnman1" prefHeight="144.0" prefWidth="106.0" styleClass="btnman" />
+            <ImageView fitHeight="144.0" fitWidth="101.0" layoutX="275.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/person3.png" />
                </image>
             </ImageView>
-            <Button layoutX="277.0" layoutY="56.0" mnemonicParsing="false" onAction="#btnman2" prefHeight="122.0" prefWidth="90.0" styleClass="btnman" />
-            <ImageView fitHeight="144.0" fitWidth="101.0" layoutX="470.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+            <Button fx:id="btnman2" disable="true" layoutX="272.0" layoutY="85.0" mnemonicParsing="false" onAction="#btnman2" prefHeight="144.0" prefWidth="106.0" styleClass="btnman" />
+            <ImageView fitHeight="144.0" fitWidth="101.0" layoutX="486.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/person2.png" />
                </image>
             </ImageView>
-            <Button layoutX="482.0" layoutY="53.0" mnemonicParsing="false" onAction="#btnman3" prefHeight="128.0" prefWidth="77.0" styleClass="btnman" />
-            <Button layoutX="514.0" layoutY="298.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="96.0" style="-fx-background-color: #90EE90;" text="start" textAlignment="CENTER" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="514.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="298.0">
+            <Button fx:id="btnman3" disable="true" layoutX="482.0" layoutY="85.0" mnemonicParsing="false" onAction="#btnman3" prefHeight="144.0" prefWidth="96.0" styleClass="btnman" />
+            <Button layoutX="498.0" layoutY="312.0" mnemonicParsing="false" onAction="#start" prefHeight="49.0" prefWidth="96.0" style="-fx-background-color: #90EE90;" text="start" textAlignment="CENTER" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="498.0" AnchorPane.rightAnchor="46.0" AnchorPane.topAnchor="312.0">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
@@ -88,7 +82,7 @@
                   </LinearGradient>
                </textFill>
             </Button>
-            <Button layoutX="83.0" layoutY="212.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="96.0" style="-fx-background-color: lemonchiffon;" text="10$" textAlignment="CENTER">
+            <Button fx:id="buyman3" layoutX="470.0" layoutY="249.0" mnemonicParsing="false" onAction="#buyman3" prefHeight="49.0" prefWidth="119.0" style="-fx-background-color: lemonchiffon;" text="20$ 購買" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
@@ -101,7 +95,7 @@
                   </LinearGradient>
                </textFill>
             </Button>
-            <Button layoutX="472.0" layoutY="212.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="96.0" style="-fx-background-color: lemonchiffon;" text="30$" textAlignment="CENTER">
+            <Button fx:id="buyman2" layoutX="262.0" layoutY="249.0" mnemonicParsing="false" onAction="#buyman2" prefHeight="49.0" prefWidth="127.0" style="-fx-background-color: lemonchiffon;" text="10$  購買" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
@@ -114,20 +108,7 @@
                   </LinearGradient>
                </textFill>
             </Button>
-            <Button layoutX="277.0" layoutY="212.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="96.0" style="-fx-background-color: lemonchiffon;" text="20$" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="22.0" />
-               </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="#00c1ff" />
-                        <Stop color="#5800ff" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </textFill>
-            </Button>
-            <Label contentDisplay="CENTER" layoutX="83.0" layoutY="307.0" prefHeight="30.0" prefWidth="96.0" style="-fx-background-color: mistyrose;" text="擁有 20 $" textAlignment="CENTER">
+            <Label fx:id="moneyjlb" contentDisplay="CENTER" layoutX="450.0" layoutY="24.0" prefHeight="30.0" prefWidth="96.0" style="-fx-background-color: mistyrose;" text="擁有 20 $" textAlignment="CENTER">
                <font>
                   <Font name="AdobeDevanagari-Regular" size="20.0" />
                </font>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0">
+         <children>
+            <Label layoutX="170.0" layoutY="180.0" text="聯絡信箱:" />
+            <Label layoutX="57.0" layoutY="180.0" text="賴沛錞" />
+            <Label layoutX="170.0" layoutY="109.0" text="聯絡信箱:" />
+            <Label layoutX="57.0" layoutY="109.0" text="詹佩郡" />
+            <Label layoutX="258.0" layoutY="109.0" text="105021026@live.asia.edu.tw" />
+            <Label layoutX="258.0" layoutY="180.0" text="105021046@live.asia.edu.tw" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

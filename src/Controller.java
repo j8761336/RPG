@@ -1,14 +1,14 @@
+import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
+import javafx.scene.control.*;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -17,31 +17,33 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class Controller implements Controllerstage {
+    //    public static int money = 0;
     @FXML
-    private MenuBar mb;
+    public MenuBar mb;
     @FXML
     private Menu mn;
     @FXML
     private AnchorPane ap;
     @FXML
-    private AnchorPane ap2;
-    @FXML
     private Button btn1;
     @FXML
-    private Button btn2;
+    public Button btn2;
     @FXML
-    private Button btn3;
+    public Button btn3;
     @FXML
     private Button btnman1;
     @FXML
     private Button btnman2;
     @FXML
     private Button btnman3;
+    @FXML
+    public Label moneyjlb;
     @FXML
     private Button btnshop;
     @FXML
@@ -56,29 +58,47 @@ public class Controller implements Controllerstage {
     private ImageView imgman2;
     @FXML
     private ImageView imgman3;
-    @FXML
-    private ImageView img[] = new ImageView[16];
+
 
     private StageController sc;
-    public static int count = 0;
-    public int b = 0;
+    public static int count = 0, money = 0, nonebtn = 1;
+    public int b = 0, person = 0;
 
     public void setStageController(StageController s) {
         sc = s;
-
         if (count == 0) {
-            sc.addcontroller("Controller1", this);
             count++;
-        } else {
-            sc.addcontroller("Controller2", this);
+            sc.addcontroller("Controller1", this);
+            btn2.setOpacity(0.8);
+            btn3.setOpacity(0.8);
         }
     }
+
+
+    @FXML
+    public void exit() {
+        System.exit(0);
+    }
+
+    @FXML
+    public void about() {
+        sc.getStage(Main.mainview4).setTitle("聯絡管理員");
+        sc.setStage(Main.mainview4);
+    }
+
+    @FXML
+    public void reset() {
+        sc.setStage(Main.mainview);
+        sc.cancelStage(Main.mainview2);
+        sc.cancelStage(Main.mainview3);
+
+    }
+
     @FXML
     private void btnshopaction(ActionEvent event) throws IOException {
         try {
             sc.setStage(Main.mainview2);
             sc.cancelStage(Main.mainview);
-
         } catch (Exception e) {
             e.toString();
         }
@@ -87,6 +107,10 @@ public class Controller implements Controllerstage {
     @FXML
     private void btn1action(ActionEvent event) throws IOException {
         try {
+            b = 1;
+            PersonController con2 = (PersonController) sc.getController("Controller2");
+            con2.moneyjlb.setText(String.valueOf(money));
+            con2.moneyjlb.setAlignment(Pos.CENTER);
             sc.setStage(Main.mainview2);
             sc.cancelStage(Main.mainview);
         } catch (Exception e) {
@@ -97,6 +121,10 @@ public class Controller implements Controllerstage {
     @FXML
     private void btn2action(ActionEvent event) throws IOException {
         try {
+            b = 2;
+            PersonController con2 = (PersonController) sc.getController("Controller2");
+            con2.moneyjlb.setText(String.valueOf(money));
+            con2.moneyjlb.setAlignment(Pos.CENTER);
             sc.setStage(Main.mainview2);
             sc.cancelStage(Main.mainview);
         } catch (Exception e) {
@@ -107,59 +135,33 @@ public class Controller implements Controllerstage {
     @FXML
     private void btn3action(ActionEvent event) throws IOException {
         try {
+            b = 3;
+            PersonController con2 = (PersonController) sc.getController("Controller2");
+            con2.moneyjlb.setText(String.valueOf(money));
+            con2.moneyjlb.setAlignment(Pos.CENTER);
             sc.setStage(Main.mainview2);
             sc.cancelStage(Main.mainview);
+
         } catch (Exception e) {
             e.toString();
         }
     }
 
-    @FXML
-    private void prevbtn(ActionEvent event) throws IOException {
-        try {
-            sc.setStage(Main.mainview);
-            sc.cancelStage(Main.mainview2);
-        } catch (Exception w) {
-            System.out.println(w.toString());
-        }
+    public int level() {
+        return b;
     }
 
-    @FXML
-    private void btnman1(ActionEvent event) throws IOException {
-        try {
-            mapController con = (mapController) sc.getController("Controller3");
-            con.init(1);
-            sc.cancelStage(Main.mainview2);
-            sc.setStage(Main.mainview3);
-        } catch (Exception w) {
-            System.out.println(w.toString());
+    public void setnobtn() {
+        if (nonebtn >= 2) {
+            System.out.println(Controller.nonebtn);
+            btn2.setId("btn2style");
+            btn2.setDisable(false);
+            if (nonebtn >= 3) {
+                btn3.setId("btn3style");
+                btn3.setDisable(false);
+            }
         }
     }
-
-    @FXML
-    private void btnman2(ActionEvent event) throws IOException {
-        try {
-            mapController con = (mapController) sc.getController("Controller3");
-            con.init(2);
-            sc.cancelStage(Main.mainview2);
-            sc.setStage(Main.mainview3);
-        } catch (Exception w) {
-            System.out.println(w.toString());
-        }
-    }
-
-    @FXML
-    private void btnman3(ActionEvent event) throws IOException {
-        try {
-            mapController con = (mapController) sc.getController("Controller3");
-            con.init(3);
-            sc.cancelStage(Main.mainview2);
-            sc.setStage(Main.mainview3);
-        } catch (Exception w) {
-            System.out.println(w.toString());
-        }
-    }
-
 
 
 }

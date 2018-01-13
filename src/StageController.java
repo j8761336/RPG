@@ -21,7 +21,7 @@ public class StageController {
 
     public void addcontroller(String name, Object obj) {
         controller.put(name, obj);
-//        System.out.println(name + obj);
+        System.out.println(name + obj);
     }
 
     public Stage getStage(String name) {
@@ -33,15 +33,20 @@ public class StageController {
         return controller.get(name);
     }
 
-    public void loadStage(String name, String resources) throws IOException {
+    public void loadStage(String name, String resources, String title) throws IOException {
+        System.out.println(name);
+        System.out.println(resources);
         FXMLLoader loader = new FXMLLoader(getClass().getResource(resources));
         Pane tempPane = (Pane) loader.load();
-//        Controller cr = loader.getController();
         Controllerstage cs = loader.getController();
         cs.setStageController(this);
         Stage tempStage = new Stage();
+        if (!title.equals("3")) {
+            tempStage.setTitle(title);
+        }
         tempStage.setScene(new Scene(tempPane));
         this.addStage(name, tempStage);
+
     }
 
     public boolean setStage(String name) {
