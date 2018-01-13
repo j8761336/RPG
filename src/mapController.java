@@ -89,9 +89,9 @@ public class mapController implements Controllerstage {
         Text t = new Text();
         Text2 t2 =new Text2();
         Text3 t3 =new Text3();
+        t3.start();
         t2.start();
         t.start();
-        t3.start();
     }
 
     private void addKeyHandler() {
@@ -431,7 +431,7 @@ public class mapController implements Controllerstage {
                     e.printStackTrace();
                 } finally {
                     try {
-                        Thread.sleep(1 * 200);
+                        Thread.sleep(1 * 50);
                     } catch (Exception e) {
                     }
                 }
@@ -450,7 +450,7 @@ public class mapController implements Controllerstage {
                     e.printStackTrace();
                 } finally {
                     try {
-                        Thread.sleep(1 * 200);
+                        Thread.sleep(1 * 50);
                     } catch (Exception e) {
                     }
                 }
@@ -469,7 +469,7 @@ public class mapController implements Controllerstage {
                     e.printStackTrace();
                 } finally {
                     try {
-                        Thread.sleep(1 * 200);
+                        Thread.sleep(1 * 50);
                     } catch (Exception e) {
                     }
                 }
@@ -488,14 +488,15 @@ public class mapController implements Controllerstage {
                     e.printStackTrace();
                 } finally {
                     try {
-                        Thread.sleep(1 * 200);
+                        Thread.sleep(1 * 50);
                     } catch (Exception e) {
                     }
                 }
             }
         }
 
- }   //  小怪物第3之-------------------------------------------------------------------------
+ }
+//   小怪物第3之-------------------------------------------------------------------------
     public class Text3 extends Thread {
 
         ImageView d = (ImageView) anchorPane.getChildren().get(20);
@@ -568,7 +569,7 @@ public class mapController implements Controllerstage {
         public void drun4() {
             while (true) {
                 try {
-                    if (dy > 205) {
+                    if (dy > 280) {
                         dy -= 10;
                         d.setLayoutY(dy);
                     }else {
