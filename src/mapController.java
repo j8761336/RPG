@@ -87,7 +87,11 @@ public class mapController implements Controllerstage {
         stonecount();
         this.addKeyHandler();
         Text t = new Text();
+        Text2 t2 =new Text2();
+        Text3 t3 =new Text3();
+        t2.start();
         t.start();
+        t3.start();
     }
 
     private void addKeyHandler() {
@@ -228,33 +232,360 @@ public class mapController implements Controllerstage {
     }
 
     public class Text extends Thread {
-
         ImageView a = (ImageView) anchorPane.getChildren().get(1);
+        ImageView b = (ImageView) anchorPane.getChildren().get(18);
+//        ImageView c = (ImageView) anchorPane.getChildren().get(19);
+//        ImageView d = (ImageView) anchorPane.getChildren().get(20);
+        double bx = b.getLayoutX();
+        double by = b.getLayoutY();
+//        double cx = c.getLayoutX();
+//        double cy = c.getLayoutY();
+//        double dx = d.getLayoutX();
+//        double dy = d.getLayoutY();
 
+        // 這是閃電跟小恐龍--------------------------------------------------------------------------------
         public void run() {
+            while (true) {
+                run1();
+                try {
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                }
+
+        }
+
+        public void run1() {
             while (true) {
                 try {
                     a.setVisible(false);
+                    if (bx < 320) {
+                        bx += 10;
+                        b.setLayoutX(bx);
+                    } else {
+                        run2();
+                        break;
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {
                     try {
-                        Thread.sleep(1 * 500);
+                        Thread.sleep(1 * 100);
                     } catch (Exception e) {
                     }
                 }
                 try {
                     a.setVisible(true);
+                    if (bx < 320) {
+                        bx += 10;
+                        b.setLayoutX(bx);
+                    } else {
+                        run2();
+                        break;
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {
                     try {
-                        Thread.sleep(1 * 500);
+                        Thread.sleep(1 * 100);
                     } catch (Exception e) {
                     }
                 }
             }
         }
+
+        public void run2() {
+            while (true) {
+                try {
+                    a.setVisible(false);
+                    if (by < 235) {
+                        by += 10;
+                        b.setLayoutY(by);
+                    } else {
+                        run3();
+                        break;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        Thread.sleep(1 * 800);
+                    } catch (Exception e) {
+                    }
+                }
+                try {
+                    a.setVisible(true);
+                    if (by < 235) {
+                        by += 10;
+                        b.setLayoutY(by);
+                    } else {
+                        run3();
+                        break;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        Thread.sleep(1 * 800);
+                    } catch (Exception e) {
+                    }
+                }
+            }
+        }
+
+        public void run3() {
+            while (true) {
+                try {
+                    a.setVisible(false);
+                    if (bx > 166) {
+                        bx -= 10;
+                        b.setLayoutX(bx);
+                    } else {
+                        run4();
+                        break;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        Thread.sleep(1 * 100);
+                    } catch (Exception e) {
+                    }
+                }
+                try {
+                    a.setVisible(true);
+                    if (bx > 166) {
+                        bx -= 10;
+                        b.setLayoutX(bx);
+                    } else {
+                        run4();
+                        break;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        Thread.sleep(1 * 100);
+                    } catch (Exception e) {
+                    }
+                }
+            }
+        }
+
+        public void run4() {
+            while (true) {
+                try {
+                    a.setVisible(false);
+                    if (by > 116) {
+                        by -= 10;
+                        b.setLayoutY(by);
+                    } else {
+                        run1();
+                        break;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        Thread.sleep(1 * 800);
+                    } catch (Exception e) {
+                    }
+                }
+                try {
+                    a.setVisible(true);
+                    if (by > 116) {
+                        by -= 10;
+                        b.setLayoutY(by);
+                    } else {
+                        run1();
+                        break;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        Thread.sleep(1 * 800);
+                    } catch (Exception e) {
+                    }
+                }
+            }
+        }
+    }
+    //  小怪物第二之-------------------------------------------------------------------------
+    public class Text2 extends Thread {
+        ImageView c = (ImageView) anchorPane.getChildren().get(19);
+        double cx = c.getLayoutX();
+        double cy = c.getLayoutY();
+
+        public void run() {
+            while (true) {
+                try {
+                    if (cx < 650) {
+                        cx += 10;
+                        c.setLayoutX(cx);
+                    } else {
+                        crun2();
+                        break;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        Thread.sleep(1 * 200);
+                    } catch (Exception e) {
+                    }
+                }
+            }
+        }public void crun2() {
+            while (true) {
+                try {
+                    if (cy < 246) {
+                        cy += 10;
+                        c.setLayoutY(cy);
+                    } else {
+                        crun3();
+                        break;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        Thread.sleep(1 * 200);
+                    } catch (Exception e) {
+                    }
+                }
+            }
+        }public void crun3() {
+            while (true) {
+                try {
+                    if (cx > 400) {
+                        cx -= 10;
+                        c.setLayoutX(cx);
+                    } else {
+                        crun4();
+                        break;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        Thread.sleep(1 * 200);
+                    } catch (Exception e) {
+                    }
+                }
+            }
+        }public void crun4() {
+            while (true) {
+                try {
+                    if (cy >= 121) {
+                        cy -= 10;
+                        c.setLayoutY(cy);
+                    } else {
+                        run();
+                        break;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        Thread.sleep(1 * 200);
+                    } catch (Exception e) {
+                    }
+                }
+            }
+        }
+
+ }   //  小怪物第3之-------------------------------------------------------------------------
+    public class Text3 extends Thread {
+
+        ImageView d = (ImageView) anchorPane.getChildren().get(20);
+        double dx = d.getLayoutX();
+        double dy = d.getLayoutY();
+
+        public void run() {
+            while (true) {
+                try {
+                    if (dx < 370) {
+                        dx += 10;
+                        d.setLayoutX(dx);
+                    } else {
+                        drun2();
+                        break;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        Thread.sleep(1 * 200);
+                    } catch (Exception e) {
+                    }
+                }
+            }
+        }
+
+        public void drun2() {
+            while (true) {
+                try {
+                    if (dy < 405) {
+                        dy += 10;
+                        d.setLayoutY(dy);
+                    } else {
+                        drun3();
+                        break;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        Thread.sleep(1 * 200);
+                    } catch (Exception e) {
+                    }
+                }
+            }
+        }
+
+        public void drun3() {
+            while (true) {
+                try {
+                    if (dx > 120) {
+                        dx -= 10;
+                        d.setLayoutX(dx);
+                    } else {
+                        drun4();
+                        break;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        Thread.sleep(1 * 200);
+                    } catch (Exception e) {
+                    }
+                }
+            }
+        }
+
+        public void drun4() {
+            while (true) {
+                try {
+                    if (dy > 205) {
+                        dy -= 10;
+                        d.setLayoutY(dy);
+                    }else {
+                        run();
+                    break;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        Thread.sleep(1 * 200);
+                    } catch (Exception e) {
+                    }
+                }
+            }
+        }
+
     }
 
 }

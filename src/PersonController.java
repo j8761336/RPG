@@ -39,6 +39,7 @@ public class PersonController implements Controllerstage {
     @FXML
     private Button buyman3;
 
+
     private StageController sc;
     public static int money = 0;
     public int b = 0, person = 0;
