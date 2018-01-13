@@ -30,6 +30,7 @@ public class Main extends Application {
         stageController.loadStage(mainview3, main3,"3");
         stageController.loadStage(mainview4, main4,title4);
         stageController.setStage(mainview);
+
     }
 
 
