@@ -74,7 +74,7 @@ public class Controller implements Controllerstage {
         }
     }
 
-
+///////////////menu bar/////////////////////////////////
     @FXML
     public void exit() {
         System.exit(0);
@@ -93,16 +93,7 @@ public class Controller implements Controllerstage {
         sc.cancelStage(Main.mainview3);
 
     }
-
-    @FXML
-    private void btnshopaction(ActionEvent event) throws IOException {
-        try {
-            sc.setStage(Main.mainview2);
-            sc.cancelStage(Main.mainview);
-        } catch (Exception e) {
-            e.toString();
-        }
-    }
+///////////////////////////////////////////////////////////////////////
 
     @FXML
     private void btn1action(ActionEvent event) throws IOException {

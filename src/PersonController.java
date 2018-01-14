@@ -41,14 +41,13 @@ public class PersonController implements Controllerstage {
 
 
     private StageController sc;
-    public static int money = 0;
     public int b = 0, person = 0;
 
     public void setStageController(StageController s) {
         sc = s;
         sc.addcontroller("Controller2", this);
     }
-
+////////////////////menu bar/////////////////////////////////
     @FXML
     public void exit() {
         System.exit(0);
@@ -66,7 +65,7 @@ public class PersonController implements Controllerstage {
         sc.cancelStage(Main.mainview2);
         sc.cancelStage(Main.mainview3);
     }
-
+//////////////////////////////////////////////////////////////
 
     @FXML
     private void prevbtn(ActionEvent event) throws IOException {
@@ -126,7 +125,6 @@ public class PersonController implements Controllerstage {
     @FXML
     private void start(ActionEvent event) throws IOException {
         try {
-
             mapController map = (mapController) sc.getController("Controller3");
             if (person == 1) {
                 map.init(1);

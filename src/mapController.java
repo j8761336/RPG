@@ -37,7 +37,7 @@ public class mapController implements Controllerstage {
         personcon = (PersonController) sc.getController("Controller2");
         sc.addcontroller("Controller3", this);
     }
-
+    ///////////////menu bar/////////////////////////////////
     @FXML
     private void reset() {
         con.reset();
@@ -58,7 +58,7 @@ public class mapController implements Controllerstage {
     private void about() {
         con.about();
     }
-
+///////////////menu bar/////////////////////////////////
 
     public void init(int a) {
         Pane pane = (Pane) sc.getStage(Main.mainview3).getScene().getRoot();
