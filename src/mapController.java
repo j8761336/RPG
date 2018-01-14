@@ -30,6 +30,7 @@ public class mapController implements Controllerstage {
     private PersonController personcon;
     @FXML
     MenuBar mb;
+    int denden = 0;
 
     public void setStageController(StageController stageController) {
         sc = stageController;
@@ -37,6 +38,7 @@ public class mapController implements Controllerstage {
         personcon = (PersonController) sc.getController("Controller2");
         sc.addcontroller("Controller3", this);
     }
+
     ///////////////menu bar/////////////////////////////////
     @FXML
     private void reset() {
@@ -106,6 +108,15 @@ public class mapController implements Controllerstage {
 
 
     private void addKeyHandler() {
+        ImageView b = (ImageView) anchorPane.getChildren().get(18);
+        ImageView c = (ImageView) anchorPane.getChildren().get(19);
+        ImageView d = (ImageView) anchorPane.getChildren().get(20);
+        int bx = (int) b.getLayoutX();
+        int by = (int) b.getLayoutY();
+        int cx = (int) c.getLayoutX();
+        int cy = (int) c.getLayoutY();
+        int dx2 = (int) d.getLayoutX();
+        int dy2 = (int) d.getLayoutY();
         anchorPane.requestFocus();
         anchorPane.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
@@ -113,6 +124,42 @@ public class mapController implements Controllerstage {
                 int dx = (int) imgv.getLayoutX();
                 int dy = (int) imgv.getLayoutY();
                 if (event.getCode() == KeyCode.UP) {
+                    if (dx >= 100 && dx <= 200 && dy >= 335 && dy <= 377) {
+                        if (denden == 0) {
+                            sc.setStage(Main.mainview);
+                            sc.cancelStage(Main.mainview3);
+                            Alert alert = new Alert(Alert.AlertType.WARNING);
+                            alert.setTitle("Q_Q");
+                            alert.setContentText("電死了 !!GameOver!!");
+                            alert.showAndWait();
+                        }
+                    }
+                    if (dx >= bx && dx <= bx + 50 && dy >= by && dy <= by + 50) {
+                        sc.setStage(Main.mainview);
+                        sc.cancelStage(Main.mainview3);
+                        Alert alert = new Alert(Alert.AlertType.WARNING);
+                        alert.setTitle("Q_Q");
+                        alert.setContentText("你被吃掉了!!GameOver!!");
+                        alert.showAndWait();
+
+                    }
+                    if (dx >= cx && dx <= cx + 50 && dy >= cy && dy <= cy + 50) {
+                        sc.setStage(Main.mainview);
+                        sc.cancelStage(Main.mainview3);
+                        Alert alert = new Alert(Alert.AlertType.WARNING);
+                        alert.setTitle("Q_Q");
+                        alert.setContentText("你被吃掉了!!GameOver!!");
+                        alert.showAndWait();
+
+                    }
+                    if (dx >= dx2 && dx <= dx2 + 50 && dy >= dy2 && dy <= dy2 + 50) {
+                        sc.setStage(Main.mainview);
+                        sc.cancelStage(Main.mainview3);
+                        Alert alert = new Alert(Alert.AlertType.WARNING);
+                        alert.setTitle("Q_Q");
+                        alert.setContentText("你被吃掉了!!GameOver!!");
+                        alert.showAndWait();
+                    }
                     if (count == 0) {
                         stonejudge(dx, dy, 1);
                         coinjudge(dx, dy, 1);
@@ -122,6 +169,43 @@ public class mapController implements Controllerstage {
                         dy -= 10;
                     }
                 } else if (event.getCode() == KeyCode.DOWN) {
+                   if (dx >= 100 && dx <= 200 && dy >= 335 && dy <= 377) {
+                    if (denden == 0) {
+                        sc.setStage(Main.mainview);
+                        sc.cancelStage(Main.mainview3);
+                        Alert alert = new Alert(Alert.AlertType.WARNING);
+                        alert.setTitle("Q_Q");
+                        alert.setContentText("電死了 !!GameOver!!");
+                        alert.showAndWait();
+                    }
+                }
+                if (dx >= bx && dx <= bx + 50 && dy >= by && dy <= by + 50) {
+
+                    sc.setStage(Main.mainview);
+                    sc.cancelStage(Main.mainview3);
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Q_Q");
+                    alert.setContentText("你被吃掉了!!GameOver!!");
+                    alert.showAndWait();
+
+                }
+                if (dx >= cx && dx <= cx + 50 && dy >= cy && dy <= cy + 50) {
+                    sc.setStage(Main.mainview);
+                    sc.cancelStage(Main.mainview3);
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Q_Q");
+                    alert.setContentText("你被吃掉了!!GameOver!!");
+                    alert.showAndWait();
+
+                }
+                if (dx >= dx2 && dx <= dx2 + 50 && dy >= dy2 && dy <= dy2 + 50) {
+                    sc.setStage(Main.mainview);
+                    sc.cancelStage(Main.mainview3);
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Q_Q");
+                    alert.setContentText("你被吃掉了!!GameOver!!");
+                    alert.showAndWait();
+                }
                     if (count == 0) {
                         stonejudge(dx, dy, 2);
                         coinjudge(dx, dy, 2);
@@ -131,6 +215,43 @@ public class mapController implements Controllerstage {
                         dy += 10;
                     }
                 } else if (event.getCode() == KeyCode.LEFT) {
+                    if (dx >= 100 && dx <= 200 && dy >= 335 && dy <= 377) {
+                    if (denden == 0) {
+                        sc.setStage(Main.mainview);
+                        sc.cancelStage(Main.mainview3);
+                        Alert alert = new Alert(Alert.AlertType.WARNING);
+                        alert.setTitle("Q_Q");
+                        alert.setContentText("電死了 !!GameOver!!");
+                        alert.showAndWait();
+                    }
+                }
+                if (dx >= bx && dx <= bx + 50 && dy >= by && dy <= by + 50) {
+
+                    sc.setStage(Main.mainview);
+                    sc.cancelStage(Main.mainview3);
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Q_Q");
+                    alert.setContentText("你被吃掉了!!GameOver!!");
+                    alert.showAndWait();
+
+                }
+                if (dx >= cx && dx <= cx + 50 && dy >= cy && dy <= cy + 50) {
+                    sc.setStage(Main.mainview);
+                    sc.cancelStage(Main.mainview3);
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Q_Q");
+                    alert.setContentText("你被吃掉了!!GameOver!!");
+                    alert.showAndWait();
+
+                }
+                if (dx >= dx2 && dx <= dx2 + 50 && dy >= dy2 && dy <= dy2 + 50) {
+                    sc.setStage(Main.mainview);
+                    sc.cancelStage(Main.mainview3);
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Q_Q");
+                    alert.setContentText("你被吃掉了!!GameOver!!");
+                    alert.showAndWait();
+                }
                     if (count == 0) {
                         stonejudge(dx, dy, 3);
                         coinjudge(dx, dy, 3);
@@ -140,6 +261,43 @@ public class mapController implements Controllerstage {
                         dx -= 10;
                     }
                 } else if (event.getCode() == KeyCode.RIGHT) {
+                if (dx >= 100 && dx <= 200 && dy >= 335 && dy <= 377) {
+                        if (denden == 0) {
+                            sc.setStage(Main.mainview);
+                            sc.cancelStage(Main.mainview3);
+                            Alert alert = new Alert(Alert.AlertType.WARNING);
+                            alert.setTitle("Q_Q");
+                            alert.setContentText("電死了 !!GameOver!!");
+                            alert.showAndWait();
+                        }
+                    }
+                    if (dx >= bx && dx <= bx + 50 && dy >= by && dy <= by + 50) {
+
+                        sc.setStage(Main.mainview);
+                        sc.cancelStage(Main.mainview3);
+                        Alert alert = new Alert(Alert.AlertType.WARNING);
+                        alert.setTitle("Q_Q");
+                        alert.setContentText("你被吃掉了!!GameOver!!");
+                        alert.showAndWait();
+
+                    }
+                    if (dx >= cx && dx <= cx + 50 && dy >= cy && dy <= cy + 50) {
+                        sc.setStage(Main.mainview);
+                        sc.cancelStage(Main.mainview3);
+                        Alert alert = new Alert(Alert.AlertType.WARNING);
+                        alert.setTitle("Q_Q");
+                        alert.setContentText("你被吃掉了!!GameOver!!");
+                        alert.showAndWait();
+
+                    }
+                    if (dx >= dx2 && dx <= dx2 + 50 && dy >= dy2 && dy <= dy2 + 50) {
+                        sc.setStage(Main.mainview);
+                        sc.cancelStage(Main.mainview3);
+                        Alert alert = new Alert(Alert.AlertType.WARNING);
+                        alert.setTitle("Q_Q");
+                        alert.setContentText("你被吃掉了!!GameOver!!");
+                        alert.showAndWait();
+                    }
                     if (count == 0) {
                         stonejudge(dx, dy, 4);
                         coinjudge(dx, dy, 4);
@@ -307,10 +465,7 @@ public class mapController implements Controllerstage {
 //        ImageView d = (ImageView) anchorPane.getChildren().get(20);
         double bx = b.getLayoutX();
         double by = b.getLayoutY();
-//        double cx = c.getLayoutX();
-//        double cy = c.getLayoutY();
-//        double dx = d.getLayoutX();
-//        double dy = d.getLayoutY();
+
 
         // 這是閃電跟小恐龍--------------------------------------------------------------------------------
         public void run() {
@@ -328,6 +483,7 @@ public class mapController implements Controllerstage {
             while (true) {
                 try {
                     a.setVisible(false);
+                    denden = 1;
                     if (bx < 320) {
                         bx += 10;
                         b.setLayoutX(bx);
@@ -345,6 +501,7 @@ public class mapController implements Controllerstage {
                 }
                 try {
                     a.setVisible(true);
+                    denden = 0;
                     if (bx < 320) {
                         bx += 10;
                         b.setLayoutX(bx);
@@ -367,6 +524,7 @@ public class mapController implements Controllerstage {
             while (true) {
                 try {
                     a.setVisible(false);
+                    denden = 1;
                     if (by < 235) {
                         by += 10;
                         b.setLayoutY(by);
@@ -384,6 +542,7 @@ public class mapController implements Controllerstage {
                 }
                 try {
                     a.setVisible(true);
+                    denden = 0;
                     if (by < 235) {
                         by += 10;
                         b.setLayoutY(by);
@@ -406,6 +565,7 @@ public class mapController implements Controllerstage {
             while (true) {
                 try {
                     a.setVisible(false);
+                    denden = 1;
                     if (bx > 166) {
                         bx -= 10;
                         b.setLayoutX(bx);
@@ -423,6 +583,7 @@ public class mapController implements Controllerstage {
                 }
                 try {
                     a.setVisible(true);
+                    denden = 0;
                     if (bx > 166) {
                         bx -= 10;
                         b.setLayoutX(bx);
@@ -445,6 +606,7 @@ public class mapController implements Controllerstage {
             while (true) {
                 try {
                     a.setVisible(false);
+                    denden = 1;
                     if (by > 116) {
                         by -= 10;
                         b.setLayoutY(by);
@@ -462,6 +624,7 @@ public class mapController implements Controllerstage {
                 }
                 try {
                     a.setVisible(true);
+                    denden = 0;
                     if (by > 116) {
                         by -= 10;
                         b.setLayoutY(by);
