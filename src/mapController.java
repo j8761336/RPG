@@ -144,6 +144,7 @@ public class mapController implements Controllerstage {
     }
 
     private void addKeyHandler() {
+        aaa=true;
         anchorPane.requestFocus();
         anchorPane.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
