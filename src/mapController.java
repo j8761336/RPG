@@ -487,6 +487,7 @@ public class mapController implements Controllerstage {
                         if (dx >= bx - 50 && dx <= bx && dy >= by - 70 && dy < by + 50) {
                             mon = false;
                             stopok(this);
+
                             break;
                         } else {
                             by -= 10;
