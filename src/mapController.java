@@ -28,6 +28,7 @@ public class mapController implements Controllerstage {
     private int count = 0, level = 0, person = 0, win = 1;
     private Controller con;
     private PersonController personcon;
+    private ImageView mon1,mon2,mon3;
     @FXML
     MenuBar mb;
     int denden = 0;
@@ -65,8 +66,11 @@ public class mapController implements Controllerstage {
     public void init(int a) {
         Pane pane = (Pane) sc.getStage(Main.mainview3).getScene().getRoot();
         AnchorPane anchorPane = (AnchorPane) pane.getChildren().get(1);
+        mon1 = (ImageView) anchorPane.getChildren().get(18);
+        mon2 = (ImageView) anchorPane.getChildren().get(19);
+        mon3 = (ImageView) anchorPane.getChildren().get(20);
         if (person != 0) {
-            anchorPane.getChildren().remove(18);
+            anchorPane.getChildren().remove(28);
         }
         level = con.level();
         if (level == 1) {
@@ -104,19 +108,24 @@ public class mapController implements Controllerstage {
         t3.start();
         t2.start();
         t.start();
+
     }
 
-
+    private void gg(){
+        sc.setStage(Main.mainview);
+        sc.cancelStage(Main.mainview3);
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Q_Q");
+        alert.setContentText("GameOver!!");
+        alert.showAndWait();
+    }
     private void addKeyHandler() {
-        ImageView b = (ImageView) anchorPane.getChildren().get(18);
-        ImageView c = (ImageView) anchorPane.getChildren().get(19);
-        ImageView d = (ImageView) anchorPane.getChildren().get(20);
-        int bx = (int) b.getLayoutX();
-        int by = (int) b.getLayoutY();
-        int cx = (int) c.getLayoutX();
-        int cy = (int) c.getLayoutY();
-        int dx2 = (int) d.getLayoutX();
-        int dy2 = (int) d.getLayoutY();
+        int bx = (int) mon1.getLayoutX();
+        int by = (int) mon1.getLayoutY();
+        int cx = (int) mon2.getLayoutX();
+        int cy = (int) mon2.getLayoutY();
+        int dx2 = (int) mon3.getLayoutX();
+        int dy2 = (int) mon3.getLayoutY();
         anchorPane.requestFocus();
         anchorPane.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
@@ -124,183 +133,95 @@ public class mapController implements Controllerstage {
                 int dx = (int) imgv.getLayoutX();
                 int dy = (int) imgv.getLayoutY();
                 if (event.getCode() == KeyCode.UP) {
-                    if (dx >= 100 && dx <= 200 && dy >= 335 && dy <= 377) {
-                        if (denden == 0) {
-                            sc.setStage(Main.mainview);
-                            sc.cancelStage(Main.mainview3);
-                            Alert alert = new Alert(Alert.AlertType.WARNING);
-                            alert.setTitle("Q_Q");
-                            alert.setContentText("電死了 !!GameOver!!");
-                            alert.showAndWait();
-                        }
-                    }
-                    if (dx >= bx && dx <= bx + 50 && dy >= by && dy <= by + 50) {
-                        sc.setStage(Main.mainview);
-                        sc.cancelStage(Main.mainview3);
-                        Alert alert = new Alert(Alert.AlertType.WARNING);
-                        alert.setTitle("Q_Q");
-                        alert.setContentText("你被吃掉了!!GameOver!!");
-                        alert.showAndWait();
-
-                    }
-                    if (dx >= cx && dx <= cx + 50 && dy >= cy && dy <= cy + 50) {
-                        sc.setStage(Main.mainview);
-                        sc.cancelStage(Main.mainview3);
-                        Alert alert = new Alert(Alert.AlertType.WARNING);
-                        alert.setTitle("Q_Q");
-                        alert.setContentText("你被吃掉了!!GameOver!!");
-                        alert.showAndWait();
-
-                    }
-                    if (dx >= dx2 && dx <= dx2 + 50 && dy >= dy2 && dy <= dy2 + 50) {
-                        sc.setStage(Main.mainview);
-                        sc.cancelStage(Main.mainview3);
-                        Alert alert = new Alert(Alert.AlertType.WARNING);
-                        alert.setTitle("Q_Q");
-                        alert.setContentText("你被吃掉了!!GameOver!!");
-                        alert.showAndWait();
-                    }
                     if (count == 0) {
                         stonejudge(dx, dy, 1);
                         coinjudge(dx, dy, 1);
+                        if (dx >= 100 && dx <= 200 && dy >= 335 && dy <= 377) {
+                            if (denden == 0) {
+                                gg();
+                            }
+                        }
+                        if (dx >= bx && dx <= bx + 50 && dy >= by && dy <= by + 50) {
+                            gg();
+                        }
+                        if (dx >= cx && dx <= cx + 50 && dy >= cy && dy <= cy + 50) {
+                            gg();
+                        }
+                        if (dx >= dx2 && dx <= dx2 + 50 && dy >= dy2 && dy <= dy2 + 50) {
+                            gg();
+                        }
                     }
                     if (count == 1) {
                         count = 0;
                         dy -= 10;
                     }
                 } else if (event.getCode() == KeyCode.DOWN) {
-                   if (dx >= 100 && dx <= 200 && dy >= 335 && dy <= 377) {
-                    if (denden == 0) {
-                        sc.setStage(Main.mainview);
-                        sc.cancelStage(Main.mainview3);
-                        Alert alert = new Alert(Alert.AlertType.WARNING);
-                        alert.setTitle("Q_Q");
-                        alert.setContentText("電死了 !!GameOver!!");
-                        alert.showAndWait();
-                    }
-                }
-                if (dx >= bx && dx <= bx + 50 && dy >= by && dy <= by + 50) {
-
-                    sc.setStage(Main.mainview);
-                    sc.cancelStage(Main.mainview3);
-                    Alert alert = new Alert(Alert.AlertType.WARNING);
-                    alert.setTitle("Q_Q");
-                    alert.setContentText("你被吃掉了!!GameOver!!");
-                    alert.showAndWait();
-
-                }
-                if (dx >= cx && dx <= cx + 50 && dy >= cy && dy <= cy + 50) {
-                    sc.setStage(Main.mainview);
-                    sc.cancelStage(Main.mainview3);
-                    Alert alert = new Alert(Alert.AlertType.WARNING);
-                    alert.setTitle("Q_Q");
-                    alert.setContentText("你被吃掉了!!GameOver!!");
-                    alert.showAndWait();
-
-                }
-                if (dx >= dx2 && dx <= dx2 + 50 && dy >= dy2 && dy <= dy2 + 50) {
-                    sc.setStage(Main.mainview);
-                    sc.cancelStage(Main.mainview3);
-                    Alert alert = new Alert(Alert.AlertType.WARNING);
-                    alert.setTitle("Q_Q");
-                    alert.setContentText("你被吃掉了!!GameOver!!");
-                    alert.showAndWait();
-                }
                     if (count == 0) {
                         stonejudge(dx, dy, 2);
                         coinjudge(dx, dy, 2);
+                        if (dx >= 100 && dx <= 200 && dy-10 > 265 && dy <= 307) {
+                            if (denden == 0) {
+                                gg();
+                            }
+                        }
+                        if (dx >= bx && dx <= bx + 50 && dy >= by && dy <= by + 50) {
+                            gg();
+                        }
+                        if (dx >= cx && dx <= cx + 50 && dy >= cy && dy <= cy + 50) {
+                            gg();
+                        }
+                        if (dx >= dx2 && dx <= dx2 + 50 && dy >= dy2 && dy <= dy2 + 50) {
+                            gg();
+                        }
                     }
                     if (count == 1) {
                         count = 0;
                         dy += 10;
                     }
                 } else if (event.getCode() == KeyCode.LEFT) {
-                    if (dx >= 100 && dx <= 200 && dy >= 335 && dy <= 377) {
-                    if (denden == 0) {
-                        sc.setStage(Main.mainview);
-                        sc.cancelStage(Main.mainview3);
-                        Alert alert = new Alert(Alert.AlertType.WARNING);
-                        alert.setTitle("Q_Q");
-                        alert.setContentText("電死了 !!GameOver!!");
-                        alert.showAndWait();
-                    }
-                }
-                if (dx >= bx && dx <= bx + 50 && dy >= by && dy <= by + 50) {
 
-                    sc.setStage(Main.mainview);
-                    sc.cancelStage(Main.mainview3);
-                    Alert alert = new Alert(Alert.AlertType.WARNING);
-                    alert.setTitle("Q_Q");
-                    alert.setContentText("你被吃掉了!!GameOver!!");
-                    alert.showAndWait();
-
-                }
-                if (dx >= cx && dx <= cx + 50 && dy >= cy && dy <= cy + 50) {
-                    sc.setStage(Main.mainview);
-                    sc.cancelStage(Main.mainview3);
-                    Alert alert = new Alert(Alert.AlertType.WARNING);
-                    alert.setTitle("Q_Q");
-                    alert.setContentText("你被吃掉了!!GameOver!!");
-                    alert.showAndWait();
-
-                }
-                if (dx >= dx2 && dx <= dx2 + 50 && dy >= dy2 && dy <= dy2 + 50) {
-                    sc.setStage(Main.mainview);
-                    sc.cancelStage(Main.mainview3);
-                    Alert alert = new Alert(Alert.AlertType.WARNING);
-                    alert.setTitle("Q_Q");
-                    alert.setContentText("你被吃掉了!!GameOver!!");
-                    alert.showAndWait();
-                }
                     if (count == 0) {
                         stonejudge(dx, dy, 3);
                         coinjudge(dx, dy, 3);
+                        if (dx >= 100 && dx <= 200 && dy >= 335 && dy <= 377) {
+                            if (denden == 0) {
+                                gg();
+                            }
+                        }
+                        if (dx >= bx && dx <= bx + 50 && dy >= by && dy <= by + 50) {
+                            gg();
+                        }
+                        if (dx >= cx && dx <= cx + 50 && dy >= cy && dy <= cy + 50) {
+                            gg();
+
+                        }
+                        if (dx >= dx2 && dx <= dx2 + 50 && dy >= dy2 && dy <= dy2 + 50) {
+                            gg();
+                        }
                     }
                     if (count == 1) {
                         count = 0;
                         dx -= 10;
                     }
                 } else if (event.getCode() == KeyCode.RIGHT) {
-                if (dx >= 100 && dx <= 200 && dy >= 335 && dy <= 377) {
-                        if (denden == 0) {
-                            sc.setStage(Main.mainview);
-                            sc.cancelStage(Main.mainview3);
-                            Alert alert = new Alert(Alert.AlertType.WARNING);
-                            alert.setTitle("Q_Q");
-                            alert.setContentText("電死了 !!GameOver!!");
-                            alert.showAndWait();
-                        }
-                    }
-                    if (dx >= bx && dx <= bx + 50 && dy >= by && dy <= by + 50) {
 
-                        sc.setStage(Main.mainview);
-                        sc.cancelStage(Main.mainview3);
-                        Alert alert = new Alert(Alert.AlertType.WARNING);
-                        alert.setTitle("Q_Q");
-                        alert.setContentText("你被吃掉了!!GameOver!!");
-                        alert.showAndWait();
-
-                    }
-                    if (dx >= cx && dx <= cx + 50 && dy >= cy && dy <= cy + 50) {
-                        sc.setStage(Main.mainview);
-                        sc.cancelStage(Main.mainview3);
-                        Alert alert = new Alert(Alert.AlertType.WARNING);
-                        alert.setTitle("Q_Q");
-                        alert.setContentText("你被吃掉了!!GameOver!!");
-                        alert.showAndWait();
-
-                    }
-                    if (dx >= dx2 && dx <= dx2 + 50 && dy >= dy2 && dy <= dy2 + 50) {
-                        sc.setStage(Main.mainview);
-                        sc.cancelStage(Main.mainview3);
-                        Alert alert = new Alert(Alert.AlertType.WARNING);
-                        alert.setTitle("Q_Q");
-                        alert.setContentText("你被吃掉了!!GameOver!!");
-                        alert.showAndWait();
-                    }
                     if (count == 0) {
                         stonejudge(dx, dy, 4);
                         coinjudge(dx, dy, 4);
+                        if (dx >= 100 && dx <= 200 && dy >= 335 && dy <= 377) {
+                            if (denden == 0) {
+                                gg();
+                            }
+                        }
+                        if (dx >= bx && dx <= bx + 50 && dy >= by && dy <= by + 50) {
+                            gg();
+                        }
+                        if (dx >= cx && dx <= cx + 50 && dy >= cy && dy <= cy + 50) {
+                            gg();
+                        }
+                        if (dx >= dx2 && dx <= dx2 + 50 && dy >= dy2 && dy <= dy2 + 50) {
+                            gg();
+                        }
                     }
                     if (count == 1) {
                         count = 0;
