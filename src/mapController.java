@@ -103,10 +103,10 @@ public class mapController implements Controllerstage {
             mon=true;
             Text t1 = new Text();
            t1.start();
-//            t2 = new Text2();
-//            t3 = new Text3();
-//            t3.start();
-//            t2.start();
+            t2 = new Text2();
+            t3 = new Text3();
+            t3.start();
+            t2.start();
 
         } else if (level == 2) {
             sc.getStage(Main.mainview3).setTitle("第二關卡");
@@ -498,7 +498,7 @@ public class mapController implements Controllerstage {
         double cy = c.getLayoutY();
 
         public void run() {
-            while (true) {
+            while (aaa) {
                 try {
                     if (cx < 650) {
                         cx += 10;
@@ -591,7 +591,7 @@ public class mapController implements Controllerstage {
         double dy = d.getLayoutY();
 
         public void run() {
-            while (true) {
+            while (aaa) {
                 try {
                     if (dx < 370) {
                         dx += 10;
