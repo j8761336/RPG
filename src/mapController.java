@@ -26,7 +26,7 @@ public class mapController implements Controllerstage {
     private ImageView stone[] = new ImageView[16];
     private ImageView coin[] = new ImageView[7];
     private boolean boo[] = new boolean[7];
-    private boolean mon = true, flag = true,boo2 = true,boo3 = true;
+    private boolean mon = true, flag = true, boo2 = true, boo3 = true;
     private int count = 0, level = 0, person = 0, win = 1;
     private Controller con;
     private PersonController personcon;
@@ -34,7 +34,7 @@ public class mapController implements Controllerstage {
     private Text t1;
     private Text2 t2;
     private Text3 t3;
-    private boolean aaa=true;
+    private boolean aaa = true;
     @FXML
     MenuBar mb;
     int denden = 0;
@@ -75,7 +75,7 @@ public class mapController implements Controllerstage {
         mon1 = (ImageView) anchorPane.getChildren().get(18);
         mon2 = (ImageView) anchorPane.getChildren().get(19);
         mon3 = (ImageView) anchorPane.getChildren().get(20);
-        if(person!=0){
+        if (person != 0) {
             anchorPane.getChildren().remove(28);
         }
         if (a == 1) {
@@ -95,14 +95,16 @@ public class mapController implements Controllerstage {
 
         if (level == 1) {
             sc.getStage(Main.mainview3).setTitle("第一關卡");
-          anchorPane.getChildren().get(1).setVisible(false);
-            flag=false;
+            anchorPane.getChildren().get(1).setVisible(false);
+            flag = false;
             person = 1;
-            boo2=true;
-            boo3=true;
-            mon=true;
+            boo2 = true;
+            boo3 = true;
+            mon = true;
+            mon1.setLayoutX(170);
+            mon1.setLayoutY(116);
             Text t1 = new Text();
-           t1.start();
+            t1.start();
             t2 = new Text2();
             t3 = new Text3();
             t3.start();
@@ -111,18 +113,20 @@ public class mapController implements Controllerstage {
         } else if (level == 2) {
             sc.getStage(Main.mainview3).setTitle("第二關卡");
             anchorPane.getChildren().get(1).setVisible(false);
-            flag=false;
+            flag = false;
             person = 1;
-            boo2=true;
-            boo3=true;
-            aaa=true;
+            boo2 = true;
+            boo3 = true;
+            mon = true;
+            aaa = true;
         } else if (level == 3) {
             sc.getStage(Main.mainview3).setTitle("第三關卡");
             person = 1;
-            flag=true;
-            boo2=true;
-            boo3=true;
-            aaa=true;
+            flag = true;
+            boo2 = true;
+            boo3 = true;
+            mon = true;
+            aaa = true;
         }
 
 //        System.out.println(imgv.getX());
@@ -133,7 +137,7 @@ public class mapController implements Controllerstage {
     }
 
     private void gg() {
-        aaa=false;
+        aaa = false;
         sc.setStage(Main.mainview);
         sc.cancelStage(Main.mainview3);
         Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -144,7 +148,7 @@ public class mapController implements Controllerstage {
     }
 
     private void addKeyHandler() {
-        aaa=true;
+        aaa = true;
         anchorPane.requestFocus();
         anchorPane.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
@@ -292,7 +296,7 @@ public class mapController implements Controllerstage {
                     coin[i].setVisible(false);
                     if (boo[i] == true) {
                         con.money += 10;
-                        System.out.println(con.money);
+//                        System.out.println(con.money);
                         boo[i] = false;
                     }
                 }
@@ -301,7 +305,7 @@ public class mapController implements Controllerstage {
                     coin[i].setVisible(false);
                     if (boo[i] == true) {
                         con.money += 10;
-                        System.out.println(con.money);
+//                        System.out.println(con.money);
                         boo[i] = false;
                     }
                 }
@@ -320,7 +324,7 @@ public class mapController implements Controllerstage {
                     coin[i].setVisible(false);
                     if (boo[i] == true) {
                         con.money += 10;
-                        System.out.println(con.money);
+//                        System.out.println(con.money);
                         boo[i] = false;
                     }
                 }
@@ -349,7 +353,7 @@ public class mapController implements Controllerstage {
     private void stopok(Text text) {
         if (mon == false) {
             Platform.runLater(() -> {
-                text.stop();
+//                text.stop();
                 gg();
             });
         }
@@ -375,10 +379,11 @@ public class mapController implements Controllerstage {
             }
 
         }
+
         public void run1() {
             boolean boo = true;
             while (mon) {
-                System.out.println(mon);
+//                System.out.println(mon);
                 dx = (int) imgv.getLayoutX();
                 dy = (int) imgv.getLayoutY();
                 try {
@@ -387,8 +392,10 @@ public class mapController implements Controllerstage {
                         denden = 1;
                     }
                     if (bx < 320 && boo2) {
-                        System.out.println(bx);
-                        if (bx > dx-50 && bx < dx + 50 && by+50 > dy && by-50 < dy ) {
+                        if (dx + 10 > bx - 50 && dx < bx + 50 && dy >= by - 50 && dy <= by + 50) {
+                            System.out.println("1");
+//                            System.out.println(dx-50);
+//                            System.out.println("123");
                             mon = false;
                             stopok(this);
                             break;
@@ -397,14 +404,23 @@ public class mapController implements Controllerstage {
                             mon1.setLayoutX(bx);
                         }
                     } else if (bx > 166 && boo) {
-                        bx -= 10;
-                        mon1.setLayoutX(bx);
+                        if (dx < bx + 50 && dx + 10 > bx - 50 && dy >= by - 50 && dy <= by + 50) {
+                            System.out.println("2");
+                            mon = false;
+                            stopok(this);
+                            break;
+                        } else {
+                            bx -= 10;
+                            mon1.setLayoutX(bx);
+                        }
+
                     } else {
                         run2();
                         break;
                     }
                     Thread.sleep(1 * 800);
                 } catch (Exception e) {
+                    this.interrupt();
                     e.printStackTrace();
                 }
                 try {
@@ -413,20 +429,36 @@ public class mapController implements Controllerstage {
                         denden = 0;
                     }
                     if (bx < 320 && boo2) {
-                        bx += 10;
-                        mon1.setLayoutX(bx);
-                        boo = false;
-                        boo3 = true;
+                        if (dx + 10 > bx - 50 && dx < bx + 50 && dy >= by - 50 && dy <= by + 50) {
+                            System.out.println("1");
+                            mon = false;
+                            stopok(this);
+                            break;
+                        } else {
+                            bx += 10;
+                            mon1.setLayoutX(bx);
+                            boo = false;
+                            boo3 = true;
+                        }
+
                     } else if (bx > 166 && boo) {
-                        bx -= 10;
-                        mon1.setLayoutX(bx);
-                        boo3 = false;
+                        if (dx < bx + 50 && dx + 10 > bx - 50 && dy >= by - 50 && dy <= by + 50) {
+                            System.out.println("2");
+                            mon = false;
+                            stopok(this);
+                            break;
+                        } else {
+                            bx -= 10;
+                            mon1.setLayoutX(bx);
+                            boo3 = false;
+                        }
                     } else {
                         run2();
                         break;
                     }
                     Thread.sleep(1 * 800);
                 } catch (Exception e) {
+                    this.interrupt();
                     e.printStackTrace();
                 }
             }
@@ -443,22 +475,30 @@ public class mapController implements Controllerstage {
                         denden = 1;
                     }
                     if (by < 235 && boo3) {
-                        by += 10;
-                        mon1.setLayoutY(by);
+                        if (dx >= bx && dx <= bx + 50 && dy <= by + 50 && dy >= by) {
+                            mon = false;
+                            stopok(this);
+                            break;
+                        } else {
+                            by += 10;
+                            mon1.setLayoutY(by);
+                        }
                     } else if (by > 116 && boo) {
-                        by -= 10;
-                        mon1.setLayoutY(by);
+                        if (dx >= bx - 50 && dx <= bx && dy >= by - 70 && dy < by + 50) {
+                            mon = false;
+                            stopok(this);
+                            break;
+                        } else {
+                            by -= 10;
+                            mon1.setLayoutY(by);
+                        }
                     } else {
                         run1();
                         break;
-                    }
+                    }     Thread.sleep(1 * 100);
                 } catch (Exception e) {
+                    this.interrupt();
                     e.printStackTrace();
-                } finally {
-                    try {
-                        Thread.sleep(1 * 100);
-                    } catch (Exception e) {
-                    }
                 }
                 try {
                     if (flag) {
@@ -466,25 +506,35 @@ public class mapController implements Controllerstage {
                         denden = 0;
                     }
                     if (by < 235 && boo3) {
-                        by += 10;
-                        mon1.setLayoutY(by);
-                        boo = false;
-                        boo2 = false;
+                        if (dx >= bx && dx <= bx + 50 && dy <= by + 50 && dy >= by) {
+                            mon = false;
+                            stopok(this);
+                            break;
+                        } else {
+                            by += 10;
+                            mon1.setLayoutY(by);
+                            boo = false;
+                            boo2 = false;
+                        }
                     } else if (by > 116 && boo) {
-                        by -= 10;
-                        mon1.setLayoutY(by);
-                        boo2 = true;
+                        System.out.println(dx);
+                        System.out.println(bx);
+                        if (dx >= bx - 50 && dx <= bx+50 && dy >= by - 70 && dy <= by + 50) {
+                            mon = false;
+                            stopok(this);
+                            break;
+                        } else {
+                            by -= 10;
+                            mon1.setLayoutY(by);
+                            boo2 = true;
+                        }
                     } else {
                         run1();
                         break;
-                    }
+                    } Thread.sleep(1 * 100);
                 } catch (Exception e) {
+                    this.interrupt();
                     e.printStackTrace();
-                } finally {
-                    try {
-                        Thread.sleep(1 * 100);
-                    } catch (Exception e) {
-                    }
                 }
             }
         }
