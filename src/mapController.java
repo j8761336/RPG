@@ -112,7 +112,7 @@ public class mapController implements Controllerstage {
             anchorPane.getChildren().get(1).setVisible(false);
             flag = false;
             person = 1;
-<<<<<<< HEAD
+
             boo2 = true;
             boo3 = true;
             mon = true;
@@ -120,12 +120,11 @@ public class mapController implements Controllerstage {
             mon1.setLayoutY(116);
             Text t1 = new Text();
             t1.start();
-=======
             boo2=true;
             boo3=true;
             mon=true;
             t1 = new Text();
->>>>>>> origin/master
+
             t2 = new Text2();
             t3 = new Text3();
             t1.start();
