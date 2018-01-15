@@ -49,7 +49,21 @@ public class mapController implements Controllerstage {
     ///////////////menu bar/////////////////////////////////
     @FXML
     private void reset() {
+        aaa=false;
+        sc.setStage(Main.mainview);
+        sc.cancelStage(Main.mainview3);
         con.reset();
+        flag=false;
+        person = 1;
+        boo2=true;
+        boo3=true;
+        mon=true;
+        t1 = new Text();
+        t1.start();
+        t2 = new Text2();
+        t3 = new Text3();
+        t3.start();
+        t2.start();
     }
 
     @FXML
@@ -98,6 +112,7 @@ public class mapController implements Controllerstage {
             anchorPane.getChildren().get(1).setVisible(false);
             flag = false;
             person = 1;
+<<<<<<< HEAD
             boo2 = true;
             boo3 = true;
             mon = true;
@@ -105,8 +120,15 @@ public class mapController implements Controllerstage {
             mon1.setLayoutY(116);
             Text t1 = new Text();
             t1.start();
+=======
+            boo2=true;
+            boo3=true;
+            mon=true;
+            t1 = new Text();
+>>>>>>> origin/master
             t2 = new Text2();
             t3 = new Text3();
+            t1.start();
             t3.start();
             t2.start();
 
@@ -570,7 +592,7 @@ public class mapController implements Controllerstage {
         }
 
         public void crun2() {
-            while (true) {
+            while (aaa) {
                 try {
                     if (cy < 246) {
                         cy += 10;
@@ -591,7 +613,7 @@ public class mapController implements Controllerstage {
         }
 
         public void crun3() {
-            while (true) {
+            while (aaa) {
                 try {
                     if (cx > 400) {
                         cx -= 10;
@@ -612,7 +634,7 @@ public class mapController implements Controllerstage {
         }
 
         public void crun4() {
-            while (true) {
+            while (aaa) {
                 try {
                     if (cy >= 121) {
                         cy -= 10;
@@ -663,7 +685,7 @@ public class mapController implements Controllerstage {
         }
 
         public void drun2() {
-            while (true) {
+            while (aaa) {
                 try {
                     if (dy < 405) {
                         dy += 10;
@@ -684,7 +706,7 @@ public class mapController implements Controllerstage {
         }
 
         public void drun3() {
-            while (true) {
+            while (aaa) {
                 try {
                     if (dx > 120) {
                         dx -= 10;
@@ -705,7 +727,7 @@ public class mapController implements Controllerstage {
         }
 
         public void drun4() {
-            while (true) {
+            while (aaa) {
                 try {
                     if (dy > 280) {
                         dy -= 10;
