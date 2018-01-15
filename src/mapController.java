@@ -26,12 +26,14 @@ public class mapController implements Controllerstage {
     private ImageView stone[] = new ImageView[16];
     private ImageView coin[] = new ImageView[7];
     private boolean boo[] = new boolean[7];
-    private boolean mon=true;
+    private boolean mon = true, flag = true,boo2 = true,boo3 = true;
     private int count = 0, level = 0, person = 0, win = 1;
     private Controller con;
     private PersonController personcon;
     private ImageView mon1, mon2, mon3;
     private Text t;
+    private Text2 t2;
+    private Text3 t3;
     @FXML
     MenuBar mb;
     int denden = 0;
@@ -72,19 +74,8 @@ public class mapController implements Controllerstage {
         mon1 = (ImageView) anchorPane.getChildren().get(18);
         mon2 = (ImageView) anchorPane.getChildren().get(19);
         mon3 = (ImageView) anchorPane.getChildren().get(20);
-        if (person != 0) {
+        if(person!=0){
             anchorPane.getChildren().remove(28);
-        }
-        level = con.level();
-        if (level == 1) {
-            sc.getStage(Main.mainview3).setTitle("第一關卡");
-            person = 1;
-        } else if (level == 2) {
-            sc.getStage(Main.mainview3).setTitle("第二關卡");
-            person = 1;
-        } else if (level == 3) {
-            sc.getStage(Main.mainview3).setTitle("第三關卡");
-            person = 1;
         }
         if (a == 1) {
             img = new Image("img/person1.png");
@@ -94,24 +85,49 @@ public class mapController implements Controllerstage {
             img = new Image("img/person3.png");
         }
         imgv = new ImageView(img);
-
         anchorPane.getChildren().add(imgv);
         imgv.setFitHeight(70);
         imgv.setFitWidth(50);
         imgv.setLayoutX(0);
         imgv.setLayoutY(90);
+        level = con.level();
+
+        if (level == 1) {
+            sc.getStage(Main.mainview3).setTitle("第一關卡");
+          anchorPane.getChildren().get(1).setVisible(false);
+            flag=false;
+            person = 1;
+            boo2=true;
+            boo3=true;
+            mon=true;
+            Text t1 = new Text();
+           t1.start();
+//            t2 = new Text2();
+//            t3 = new Text3();
+//            t3.start();
+//            t2.start();
+
+        } else if (level == 2) {
+            sc.getStage(Main.mainview3).setTitle("第二關卡");
+            anchorPane.getChildren().get(1).setVisible(false);
+            flag=false;
+            person = 1;
+            boo2=true;
+            boo3=true;
+        } else if (level == 3) {
+            sc.getStage(Main.mainview3).setTitle("第三關卡");
+            person = 1;
+            flag=true;
+            boo2=true;
+            boo3=true;
+
+        }
+
 //        System.out.println(imgv.getX());
 //        System.out.println(imgv.getY());
         stonecount();
         coincount();
         this.addKeyHandler();
-         t = new Text();
-        Text2 t2 = new Text2();
-        Text3 t3 = new Text3();
-        t3.start();
-        t2.start();
-        t.start();
-
     }
 
     private void gg() {
@@ -138,20 +154,6 @@ public class mapController implements Controllerstage {
                 int dy = (int) imgv.getLayoutY();
                 if (event.getCode() == KeyCode.UP) {
                     if (count == 0) {
-//                        if (dx >= 100 && dx <= 200 && dy >= 335 && dy <= 377) {
-//                            if (denden == 0) {
-//                                gg();
-//                            }
-//                        }
-//                        if (dx >= bx && dx <= bx + 50 && dy >= by && dy + 10 < by + 50) {
-//                            gg();
-//                        }
-//                        if (dx >= cx && dx <= cx + 50 && dy >= cy && dy + 10 < cy + 50) {
-//                            gg();
-//                        }
-//                        if (dx >= dx2 && dx <= dx2 + 50 && dy >= dy2 && dy + 10 < dy2 + 50) {
-//                            gg();
-//                        }
                         stonejudge(dx, dy, 1);
                         coinjudge(dx, dy, 1);
                     }
@@ -161,21 +163,6 @@ public class mapController implements Controllerstage {
                     }
                 } else if (event.getCode() == KeyCode.DOWN) {
                     if (count == 0) {
-
-//                        if (dx >= 100 && dx <= 200 && dy - 10 > 265 && dy <= 307) {
-//                            if (denden == 0) {
-//                                gg();
-//                            }
-//                        }
-//                        if (dx >= bx && dx <= bx + 50 && dy + 10 >= by - 50 && dy <= by + 50) {
-//                            gg();
-//                        }
-//                        if (dx >= cx && dx <= cx + 50 && dy + 10 >= cy - 50 && dy <= cy + 50) {
-//                            gg();
-//                        }
-//                        if (dx >= dx2 && dx <= dx2 + 50 && dy + 10 >= dy2 - 50 && dy <= dy2 + 50) {
-//                            gg();
-//                        }
                         stonejudge(dx, dy, 2);
                         coinjudge(dx, dy, 2);
                     }
@@ -186,22 +173,6 @@ public class mapController implements Controllerstage {
                 } else if (event.getCode() == KeyCode.LEFT) {
 
                     if (count == 0) {
-
-//                        if (dx >= 100 && dx <= 200 && dy >= 335 && dy <= 377) {
-//                            if (denden == 0) {
-//                                gg();
-//                            }
-//                        }
-//                        if (dx >= bx && dx - 10 <= bx + 50 && dy >= by - 50 && dy <= by + 50) {
-//                            gg();
-//                        }
-//                        if (dx >= cx && dx - 10 <= cx + 50 && dy >= cy - 50 && dy <= cy + 50) {
-//                            gg();
-//
-//                        }
-//                        if (dx >= dx2 && dx - 10 <= dx2 + 50 && dy >= dy2 - 50 && dy <= dy2 + 50) {
-//                            gg();
-//                        }
                         stonejudge(dx, dy, 3);
                         coinjudge(dx, dy, 3);
                     }
@@ -212,21 +183,6 @@ public class mapController implements Controllerstage {
                 } else if (event.getCode() == KeyCode.RIGHT) {
 
                     if (count == 0) {
-
-//                        if (dx >= 100 && dx <= 200 && dy >= 335 && dy <= 377) {
-//                            if (denden == 0) {
-//                                gg();
-//                            }
-//                        }
-//                        if (dx + 10 > bx - 50 && dx <= bx + 50 && dy >= by - 50 && dy <= by + 50) {
-//                            gg();
-//                        }
-//                        if (dx + 10 >= cx - 50 && dx <= cx + 50 && dy >= cy - 50 && dy <= cy + 50) {
-//                            gg();
-//                        }
-//                        if (dx + 10 >= dx2 - 50 && dx <= dx2 + 50 && dy >= dy2 - 50 && dy <= dy2 + 50) {
-//                            gg();
-//                        }
                         stonejudge(dx, dy, 4);
                         coinjudge(dx, dy, 4);
                     }
@@ -385,16 +341,16 @@ public class mapController implements Controllerstage {
 
     }
 
-    private void stopok(){
-        if(mon==false){
-            t.interrupt();
+    private void stopok(Text text) {
+        if (mon == false) {
             Platform.runLater(() -> {
+                text.stop();
                 gg();
             });
         }
     }
 
-     class Text extends Thread {
+    class Text extends Thread {
         ImageView a = (ImageView) anchorPane.getChildren().get(1);
         //        ImageView c = (ImageView) anchorPane.getChildren().get(19);
 //        ImageView d = (ImageView) anchorPane.getChildren().get(20);
@@ -405,37 +361,32 @@ public class mapController implements Controllerstage {
 
         // 這是閃電跟小恐龍--------------------------------------------------------------------------------
         public void run() {
-            while (mon) {
-                System.out.println("11");
-                run1();
 
+            while (true) {
+                run1();
                 try {
                 } catch (Exception e) {
-                    System.out.println("222");
                     e.printStackTrace();
                 }
             }
 
         }
-
-        boolean boo2 = true;
-        boolean boo3 = true;
-
         public void run1() {
-            System.out.println("123");
             boolean boo = true;
             while (mon) {
+                System.out.println(mon);
                 dx = (int) imgv.getLayoutX();
                 dy = (int) imgv.getLayoutY();
                 try {
-                    a.setVisible(false);
-                    denden = 1;
+                    if (flag) {
+                        a.setVisible(false);
+                        denden = 1;
+                    }
                     if (bx < 320 && boo2) {
-                        if (bx + 10 > dx && bx < dx + 50 && by > dy && by < dy + 70) {
-                            mon=false;
-                            System.out.println(mon);
-                            Thread.interrupted();
-                            stopok();
+                        System.out.println(bx);
+                        if (bx > dx-50 && bx < dx + 50 && by+50 > dy && by-50 < dy ) {
+                            mon = false;
+                            stopok(this);
                             break;
                         } else {
                             bx += 10;
@@ -453,8 +404,10 @@ public class mapController implements Controllerstage {
                     e.printStackTrace();
                 }
                 try {
-                    a.setVisible(true);
-                    denden = 0;
+                    if (flag) {
+                        a.setVisible(true);
+                        denden = 0;
+                    }
                     if (bx < 320 && boo2) {
                         bx += 10;
                         mon1.setLayoutX(bx);
@@ -481,8 +434,10 @@ public class mapController implements Controllerstage {
                 dx = (int) imgv.getLayoutX();
                 dy = (int) imgv.getLayoutY();
                 try {
-                    a.setVisible(false);
-                    denden = 1;
+                    if (flag) {
+                        a.setVisible(false);
+                        denden = 1;
+                    }
                     if (by < 235 && boo3) {
                         by += 10;
                         mon1.setLayoutY(by);
@@ -502,8 +457,10 @@ public class mapController implements Controllerstage {
                     }
                 }
                 try {
-                    a.setVisible(true);
-                    denden = 0;
+                    if (flag) {
+                        a.setVisible(true);
+                        denden = 0;
+                    }
                     if (by < 235 && boo3) {
                         by += 10;
                         mon1.setLayoutY(by);
