@@ -1,3 +1,4 @@
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -30,6 +31,7 @@ public class mapController implements Controllerstage {
     private Controller con;
     private PersonController personcon;
     private ImageView mon1, mon2, mon3;
+    private Text t;
     @FXML
     MenuBar mb;
     int denden = 0;
@@ -103,7 +105,7 @@ public class mapController implements Controllerstage {
         stonecount();
         coincount();
         this.addKeyHandler();
-        Text t = new Text();
+         t = new Text();
         Text2 t2 = new Text2();
         Text3 t3 = new Text3();
         t3.start();
@@ -383,8 +385,16 @@ public class mapController implements Controllerstage {
 
     }
 
+    private void stopok(){
+        if(mon==false){
+            t.interrupt();
+            Platform.runLater(() -> {
+                gg();
+            });
+        }
+    }
 
-    public class Text extends Thread {
+     class Text extends Thread {
         ImageView a = (ImageView) anchorPane.getChildren().get(1);
         //        ImageView c = (ImageView) anchorPane.getChildren().get(19);
 //        ImageView d = (ImageView) anchorPane.getChildren().get(20);
@@ -395,10 +405,13 @@ public class mapController implements Controllerstage {
 
         // 這是閃電跟小恐龍--------------------------------------------------------------------------------
         public void run() {
-            while (true) {
+            while (mon) {
+                System.out.println("11");
                 run1();
+
                 try {
                 } catch (Exception e) {
+                    System.out.println("222");
                     e.printStackTrace();
                 }
             }
@@ -409,6 +422,7 @@ public class mapController implements Controllerstage {
         boolean boo3 = true;
 
         public void run1() {
+            System.out.println("123");
             boolean boo = true;
             while (mon) {
                 dx = (int) imgv.getLayoutX();
@@ -419,6 +433,9 @@ public class mapController implements Controllerstage {
                     if (bx < 320 && boo2) {
                         if (bx + 10 > dx && bx < dx + 50 && by > dy && by < dy + 70) {
                             mon=false;
+                            System.out.println(mon);
+                            Thread.interrupted();
+                            stopok();
                             break;
                         } else {
                             bx += 10;
