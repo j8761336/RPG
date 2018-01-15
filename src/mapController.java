@@ -31,9 +31,10 @@ public class mapController implements Controllerstage {
     private Controller con;
     private PersonController personcon;
     private ImageView mon1, mon2, mon3;
-    private Text t;
+    private Text t1;
     private Text2 t2;
     private Text3 t3;
+    private boolean aaa=true;
     @FXML
     MenuBar mb;
     int denden = 0;
@@ -114,13 +115,14 @@ public class mapController implements Controllerstage {
             person = 1;
             boo2=true;
             boo3=true;
+            aaa=true;
         } else if (level == 3) {
             sc.getStage(Main.mainview3).setTitle("第三關卡");
             person = 1;
             flag=true;
             boo2=true;
             boo3=true;
-
+            aaa=true;
         }
 
 //        System.out.println(imgv.getX());
@@ -131,12 +133,14 @@ public class mapController implements Controllerstage {
     }
 
     private void gg() {
+        aaa=false;
         sc.setStage(Main.mainview);
         sc.cancelStage(Main.mainview3);
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Q_Q");
         alert.setContentText("GameOver!!");
         alert.showAndWait();
+
     }
 
     private void addKeyHandler() {
@@ -361,8 +365,7 @@ public class mapController implements Controllerstage {
 
         // 這是閃電跟小恐龍--------------------------------------------------------------------------------
         public void run() {
-
-            while (true) {
+            while (aaa) {
                 run1();
                 try {
                 } catch (Exception e) {
