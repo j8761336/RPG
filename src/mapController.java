@@ -113,10 +113,12 @@ public class mapController implements Controllerstage {
             sc.getStage(Main.mainview3).setTitle("第一關卡");
             anchorPane.getChildren().get(1).setVisible(false);
             mon1.setVisible(false);
+//            mon1.setVisible(true);
             mon3.setVisible(false);
             flag = false;
             person = 1;
             aaa = true;
+//            t1.start();
             t2.start();
         } else if (level == 2) {
             sc.getStage(Main.mainview3).setTitle("第二關卡");
@@ -135,6 +137,7 @@ public class mapController implements Controllerstage {
             sc.getStage(Main.mainview3).setTitle("第三關卡");
             mon1.setVisible(true);
             mon3.setVisible(true);
+            mon2.setVisible(false);
             person = 1;
             flag = true;
             aaa = true;
@@ -151,7 +154,7 @@ public class mapController implements Controllerstage {
 //            mon3.setLayoutY(280);
             t1.start();
             t3.start();
-            t2.start();
+//            t2.start();
         }
 
 //        System.out.println(imgv.getX());
@@ -186,7 +189,7 @@ public class mapController implements Controllerstage {
                     if (count == 0) {
                         stonejudge(dx, dy, 1);
                         coinjudge(dx, dy, 1);
-                        if (dx >= lightx && dx <= lightx + 100 && dy > lighty && dy - 10 < lighty + 37) {
+                        if ((dx >= lightx && dx <= lightx + 100 && dy > lighty && dy - 10 < lighty + 37) && flag) {
                             stopok();
                         }
                     }
@@ -196,7 +199,7 @@ public class mapController implements Controllerstage {
                     }
                 } else if (event.getCode() == KeyCode.DOWN) {
                     if (count == 0) {
-                        if (dx >= lightx && dx <= lightx + 100 && dy + 10 > lighty - 70 && dy < lighty + 37) {
+                        if ((dx >= lightx && dx <= lightx + 100 && dy + 10 > lighty - 60&& dy < lighty + 37)&&flag) {
                             stopok();
                         }
                         stonejudge(dx, dy, 2);

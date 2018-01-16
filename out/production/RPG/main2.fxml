@@ -82,7 +82,7 @@
                   </LinearGradient>
                </textFill>
             </Button>
-            <Button fx:id="buyman3" layoutX="470.0" layoutY="249.0" mnemonicParsing="false" onAction="#buyman3" prefHeight="49.0" prefWidth="119.0" style="-fx-background-color: lemonchiffon;" text="20$ 購買" textAlignment="CENTER">
+            <Button fx:id="buyman3" layoutX="470.0" layoutY="249.0" mnemonicParsing="false" onAction="#buyman3" prefHeight="49.0" prefWidth="119.0" style="-fx-background-color: lemonchiffon;" text="20$ " textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
@@ -95,7 +95,7 @@
                   </LinearGradient>
                </textFill>
             </Button>
-            <Button fx:id="buyman2" layoutX="262.0" layoutY="249.0" mnemonicParsing="false" onAction="#buyman2" prefHeight="49.0" prefWidth="127.0" style="-fx-background-color: lemonchiffon;" text="10$  購買" textAlignment="CENTER">
+            <Button fx:id="buyman2" layoutX="262.0" layoutY="249.0" mnemonicParsing="false" onAction="#buyman2" prefHeight="49.0" prefWidth="127.0" style="-fx-background-color: lemonchiffon;" text="10$  " textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>

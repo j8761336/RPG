@@ -24,7 +24,7 @@
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
-            <MenuItem mnemonicParsing="false" onAction="#Previouspage" text="Previous page" />
+            <!--<MenuItem mnemonicParsing="false" onAction="#Previouspage" text="Previous page" />-->
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Help">
