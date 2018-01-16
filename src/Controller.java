@@ -74,7 +74,7 @@ public class Controller implements Controllerstage {
         }
     }
 
-///////////////menu bar/////////////////////////////////
+    ///////////////menu bar/////////////////////////////////
     @FXML
     public void exit() {
         System.exit(0);
@@ -93,6 +93,8 @@ public class Controller implements Controllerstage {
         sc.cancelStage(Main.mainview3);
 
     }
+
+
 ///////////////////////////////////////////////////////////////////////
 
     @FXML
@@ -148,7 +150,10 @@ public class Controller implements Controllerstage {
             System.out.println(Controller.nonebtn);
             btn2.setId("btn2style");
             btn2.setDisable(false);
+            Image img = new Image("img/unlock2.png");
+            img2.setImage(img);
             if (nonebtn >= 3) {
+                img3.setImage(img);
                 btn3.setId("btn3style");
                 btn3.setDisable(false);
             }
